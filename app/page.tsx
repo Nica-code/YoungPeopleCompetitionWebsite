@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { StatusBadge } from "@/components/StatusBadge";
-import {
-  applicationSteps,
-  currentEdition,
-  displayFact,
-  faqs,
-  historyMilestones,
-  participantBenefits,
-  partners,
-  siteConfig,
-  winners,
-} from "@/content/site";
+import { currentEdition, displayFact, siteConfig, winners } from "@/content/site";
 import { pageMetadata } from "@/lib/metadata";
 
 const homeMetadata = pageMetadata(
@@ -22,17 +11,13 @@ const homeMetadata = pageMetadata(
 
 export const metadata: Metadata = {
   ...homeMetadata,
-  title: {
-    absolute: "YPC — Young People’s Competition | Huntington, West Virginia",
-  },
+  title: { absolute: "YPC — Young People’s Competition | Huntington, West Virginia" },
 };
 
 export default function Home() {
-  const featuredWinner = winners[0];
-
   return (
     <>
-      <section className="home-hero">
+      <section className="home-hero home-hero-refined">
         <div className="hero-atmosphere" aria-hidden="true">
           <span className="hero-light" />
           <span className="hero-stage-line hero-stage-line-one" />
@@ -41,307 +26,50 @@ export default function Home() {
         </div>
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow eyebrow-light">{siteConfig.location}</p>
+            <p className="eyebrow eyebrow-light">{siteConfig.location} · 2027 competition</p>
             <h1>Your moment with the orchestra begins here.</h1>
-            <p className="hero-lede">
-              The 2027 Young People’s Competition invites Tri-State musicians
-              ages 12–18 to audition for a solo performance with the Marshall
-              University Symphony Orchestra.
-            </p>
+            <p className="hero-lede">Young musicians ages 12–18 are invited to audition for a solo performance with the Marshall University Symphony Orchestra.</p>
             <div className="button-row">
-              <Link className="button button-accent" href="/apply">
-                How to apply
-              </Link>
-              <Link className="text-link text-link-light" href="/competition">
-                View competition details <span aria-hidden="true">→</span>
-              </Link>
+              <Link className="button button-accent" href="/apply">Apply for 2027</Link>
+              <Link className="text-link text-link-light" href="/competition">Competition details <span aria-hidden="true">→</span></Link>
             </div>
           </div>
-
-          <aside className="edition-panel" aria-label="2027 competition details">
-            <div className="edition-panel-head">
-              <p>{currentEdition.title}</p>
-              <StatusBadge status="verified-current" />
-            </div>
+          <aside className="edition-panel" aria-label="2027 competition essentials">
+            <div className="edition-panel-head"><p>At a glance</p></div>
             <dl>
-              {currentEdition.facts.map((fact) => (
-                <div key={fact.label}>
-                  <dt>{fact.label}</dt>
-                  <dd>{displayFact(fact)}</dd>
-                </div>
+              {currentEdition.facts.slice(0, 4).map((fact) => (
+                <div key={fact.label}><dt>{fact.label}</dt><dd>{displayFact(fact)}</dd></div>
               ))}
             </dl>
-            <p className="edition-note">
-              {currentEdition.notice}{" "}
-              <Link href="/apply">See mailing instructions.</Link>
-            </p>
           </aside>
         </div>
-        <div className="hero-cue" aria-hidden="true">
-          <span>Scroll to explore</span>
-          <i />
-        </div>
       </section>
 
-      <section className="credibility-strip" aria-labelledby="presented-heading">
-        <div className="container credibility-grid">
-          <div>
-            <p className="section-kicker" id="presented-heading">
-              A Huntington music tradition
-            </p>
-            <p className="credibility-statement">
-              Sponsored by the Woman’s Club of Huntington, with the 2027
-              soloist performing alongside the Marshall University Symphony Orchestra.
-            </p>
-          </div>
-          <div className="partner-wordmarks" aria-label="Organizations">
-            {partners.map((partner) => (
-              <div key={partner.name}>
-                <span>{partner.name}</span>
-                <StatusBadge status={partner.status} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-paper" aria-labelledby="why-heading">
+      <section className="home-essentials section section-paper" aria-labelledby="home-essentials-title">
         <div className="container">
           <div className="section-heading split-heading">
-            <div>
-              <p className="eyebrow">Why participate</p>
-              <h2 id="why-heading">A serious opportunity, close to home.</h2>
-            </div>
-            <p>
-              The strongest competition experience is not built on grand
-              promises. It gives musicians a clear reason to prepare and a
-              meaningful place to perform.
-            </p>
+            <div><p className="eyebrow">The opportunity</p><h2 id="home-essentials-title">A stage for young musicians.</h2></div>
+            <p>The selected soloist receives a $300 award and performs with the Marshall University Symphony Orchestra. The competition is sponsored by the Woman’s Club of Huntington.</p>
           </div>
-          <div className="benefit-grid">
-            {participantBenefits.map((benefit) => (
-              <article className="benefit-item" key={benefit.number}>
-                <p className="benefit-number">{benefit.number}</p>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.text}</p>
-              </article>
-            ))}
+          <div className="home-essentials-grid">
+            <div><span>01</span><h3>Who can enter</h3><p>Instrumentalists and vocalists ages 12–18 who live in the Tri-State Area.</p></div>
+            <div><span>02</span><h3>What to prepare</h3><p>A memorized solo with orchestra, no longer than 12 minutes. Bring an accompanist.</p></div>
+            <div><span>03</span><h3>When to apply</h3><p>Your application and $30 check must arrive by December 14, 2026.</p></div>
           </div>
         </div>
       </section>
 
-      <section
-        className="section section-ivory"
-        aria-labelledby="essentials-heading"
-      >
-        <div className="container essentials-grid">
-          <div className="essentials-lead">
-            <p className="eyebrow">Competition essentials</p>
-            <h2 id="essentials-heading">
-              Know the requirements before you choose your repertoire.
-            </h2>
-            <p>
-              Read the age, repertoire, timing, and check-in requirements
-              before preparing your application and audition.
-            </p>
-            <Link className="text-link" href="/competition">
-              Explore all requirements <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-          <div className="decision-list">
-            {[
-              ["Who may enter", "Students ages 12–18 living in the Tri-State Area."],
-              [
-                "What may be performed",
-                "An instrumental or vocal solo with orchestra, up to 12 minutes.",
-              ],
-              [
-                "How auditions work",
-                "January 10 at Smith Music Hall; memorize music and bring an accompanist.",
-              ],
-              [
-                "What the winner receives",
-                "A solo performance with the orchestra and a $300 award.",
-              ],
-            ].map(([title, text], index) => (
-              <div className="decision-item" key={title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      <section className="section section-ivory home-winner" aria-labelledby="home-winner-title">
+        <div className="container home-winner-inner">
+          <div><p className="eyebrow">Past winners</p><h2 id="home-winner-title">Meet the musicians.</h2><p>Discover young performers recognized by the competition through the years.</p></div>
+          <div className="home-winner-highlight"><span>{winners[0].year}</span><strong>{winners[0].name}</strong><span>{winners[0].instrument}</span><Link className="text-link" href="/winners">See past winners <span aria-hidden="true">→</span></Link></div>
         </div>
       </section>
 
-      <section className="signature-section" aria-labelledby="signature-heading">
-        <div className="signature-visual" aria-hidden="true">
-          <span className="spotlight" />
-          <span className="soloist-mark" />
-          <span className="orchestra-arc orchestra-arc-one" />
-          <span className="orchestra-arc orchestra-arc-two" />
-          <span className="orchestra-arc orchestra-arc-three" />
-        </div>
-        <div className="container signature-content">
-          <p className="eyebrow eyebrow-light">The signature experience</p>
-          <h2 id="signature-heading">One musician. An orchestra listening.</h2>
-          <p>
-            Competition day asks for concentration: a prepared selection, a
-            clear musical point of view, and the courage to share it. The
-            concert changes the scale. A solo line becomes part of something
-            larger—heard by an orchestra, a hall, and a new generation of
-            listeners.
-          </p>
-          <Link className="text-link text-link-light" href="/about">
-            Read the YPC story <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
-
-      <section className="section section-paper" aria-labelledby="legacy-heading">
-        <div className="container">
-          <div className="section-heading split-heading">
-            <div>
-              <p className="eyebrow">History & legacy</p>
-              <h2 id="legacy-heading">More than six decades of listening.</h2>
-            </div>
-            <p>
-              The record connects civic leadership, Marshall University
-              musicians, regional schools, and competition winners. An exact
-              founding year awaits archive confirmation.
-            </p>
-          </div>
-          <ol className="timeline-preview">
-            {historyMilestones.slice(0, 4).map((milestone) => (
-              <li key={milestone.year}>
-                <span>{milestone.year}</span>
-                <div>
-                  <h3>{milestone.title}</h3>
-                  <p>{milestone.text}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <div className="section-action">
-            <Link className="button button-outline" href="/about">
-              Explore the documented history
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section winner-feature" aria-labelledby="winner-heading">
-        <div className="container winner-feature-grid">
-          <div className="winner-portrait-placeholder" aria-hidden="true">
-            <span className="portrait-year">{featuredWinner.year}</span>
-            <span className="portrait-initials">IB</span>
-            <p>Portrait pending publication permission</p>
-          </div>
-          <div className="winner-feature-copy">
-            <p className="eyebrow">Most recent winner currently verified</p>
-            <h2 id="winner-heading">{featuredWinner.name}</h2>
-            <p className="winner-instrument">{featuredWinner.instrument}</p>
-            <p className="winner-summary">
-              Marshall University reported that Isaiah performed with the
-              university symphony in the 62nd Young People’s Concert in 2023,
-              attended by Cabell County fifth graders.
-            </p>
-            <div className="source-caption">
-              <span>Source</span>
-              <a
-                href={featuredWinner.sourceUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {featuredWinner.sourceTitle}
-              </a>
-            </div>
-            <Link className="text-link" href="/winners">
-              Visit the verified archive <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-ivory" aria-labelledby="apply-heading">
-        <div className="container">
-          <div className="section-heading split-heading">
-            <div>
-              <p className="eyebrow">How to apply</p>
-              <h2 id="apply-heading">A clear path from preparation to mailing.</h2>
-            </div>
-            <p>
-              The notice calls for a paper application and a $30 check,
-              received by December 14, 2026. This site does not collect entries.
-            </p>
-          </div>
-          <ol className="application-steps">
-            {applicationSteps.map((step, index) => (
-              <li key={step.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </li>
-            ))}
-          </ol>
-          <div className="section-action">
-            <Link className="button button-dark" href="/apply">
-              Review mailing instructions
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-paper" aria-labelledby="faq-heading">
-        <div className="container faq-preview-grid">
-          <div>
-            <p className="eyebrow">Questions, answered plainly</p>
-            <h2 id="faq-heading">Start with what matters most.</h2>
-            <p className="section-copy">
-              Find the published 2027 requirements in plain language,
-              including the deadline, audition day, and award.
-            </p>
-            <Link className="text-link" href="/faq">
-              View every question <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-          <div className="faq-list">
-            {faqs.slice(0, 5).map((faq) => (
-              <details key={faq.question}>
-                <summary>{faq.question}</summary>
-                <div>
-                  <StatusBadge status={faq.status} />
-                  <p>{faq.answer}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="final-cta">
-        <div className="final-cta-atmosphere" aria-hidden="true" />
-        <div className="container final-cta-grid">
-          <div>
-            <p className="eyebrow eyebrow-light">Prepare now</p>
-            <h2>Choose the music. Build the performance. Mail your entry.</h2>
-          </div>
-          <div>
-            <p>
-              Applications and the $30 fee must be received by
-              December 14, 2026. Auditions take place January 10, 2027.
-            </p>
-            <div className="button-row">
-              <Link className="button button-accent" href="/apply">
-                How to apply
-              </Link>
-              <Link className="text-link text-link-light" href="/contact">
-                Contact & updates <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </div>
+      <section className="compact-cta">
+        <div className="container compact-cta-inner">
+          <div><p className="eyebrow eyebrow-light">2027 auditions</p><h2>Applications are due December 14, 2026.</h2></div>
+          <Link className="button button-accent" href="/apply">How to apply</Link>
         </div>
       </section>
     </>

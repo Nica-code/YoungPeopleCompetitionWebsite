@@ -31,14 +31,14 @@ test("exports every public route", async () => {
   await access(new URL("og.png", siteRoot));
 });
 
-test("renders the finished, source-conscious homepage", async () => {
+test("renders a concise homepage with the current competition essentials", async () => {
   const html = await page("");
 
   assert.match(html, /Young People(?:’|&#x27;)s Competition/i);
   assert.match(html, /Huntington, West Virginia/i);
   assert.match(html, /December 14, 2026/i);
   assert.match(html, /January 10, 2027/i);
-  assert.match(html, /more than six decades/i);
+  assert.match(html, /Harin Lee/i);
   assert.match(html, /Marshall University/i);
   assert.match(html, /Skip to main content/i);
   assert.match(html, /summary_large_image/i);
@@ -46,6 +46,7 @@ test("renders the finished, source-conscious homepage", async () => {
   assert.doesNotMatch(html, /codex-preview/i);
   assert.doesNotMatch(html, /react-loading-skeleton/i);
   assert.doesNotMatch(html, /Starter Project/i);
+  assert.doesNotMatch(html, /Current source|Portrait pending|Visit the verified archive/i);
 });
 
 test("publishes the correct 2027 requirements and mailing route", async () => {
@@ -72,7 +73,7 @@ test("publishes the correct 2027 requirements and mailing route", async () => {
   assert.doesNotMatch(apply, /Zelle|application ID/i);
 });
 
-test("publishes a cited winners archive and applicant safeguards", async () => {
+test("publishes a simple winners list and applicant safeguards", async () => {
   const [winners, privacy, accessibility] = await Promise.all([
     page("winners/"),
     page("privacy/"),
@@ -80,6 +81,7 @@ test("publishes a cited winners archive and applicant safeguards", async () => {
   ]);
 
   for (const winner of [
+    "Harin Lee",
     "Isaiah Biele",
     "Armâan Karimpour",
     "Raleigh Frail",
@@ -90,8 +92,15 @@ test("publishes a cited winners archive and applicant safeguards", async () => {
     assert.match(winners, new RegExp(winner));
   }
 
-  assert.match(winners, /View source/i);
+  assert.doesNotMatch(winners, /Award|Orchestra|Portrait pending|View source|archive checklist/i);
   assert.match(privacy, /minor/i);
   assert.match(privacy, /\$30 check/i);
   assert.match(accessibility, /WCAG 2\.2 AA/i);
+});
+
+test("omits internal-process language from public pages", async () => {
+  const pages = await Promise.all(routes.map(page));
+  for (const html of pages) {
+    assert.doesNotMatch(html, /Current source|Provisional|Confirmation needed|The first build|refund policy|organizer-decision checklist|Recommended naming|brand architecture|verified archive|source document/i);
+  }
 });

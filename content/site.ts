@@ -15,11 +15,7 @@ export type Winner = {
   year: number;
   name: string;
   instrument: string;
-  schoolOrHometown?: string;
-  award: string;
-  orchestra?: string;
-  sourceTitle: string;
-  sourceUrl: string;
+  sourceUrl?: string;
 };
 
 export type Faq = {
@@ -45,7 +41,6 @@ export const navigation = [
   { href: "/competition", label: "Competition" },
   { href: "/winners", label: "Winners" },
   { href: "/about", label: "About" },
-  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -169,12 +164,14 @@ export const historyMilestones = [
 
 export const winners: Winner[] = [
   {
+    year: 2026,
+    name: "Harin Lee",
+    instrument: "Violin",
+  },
+  {
     year: 2023,
     name: "Isaiah Biele",
     instrument: "Violin",
-    award: "Young People’s Competition winner",
-    orchestra: "Marshall University Symphony Orchestra",
-    sourceTitle: "Marshall University Board of Governors agenda",
     sourceUrl:
       "https://www.marshall.edu/board/files/April-26-2023-Board-of-Governors-Regular-Meeting_agenda.pdf",
   },
@@ -182,49 +179,30 @@ export const winners: Winner[] = [
     year: 2018,
     name: "Armâan Karimpour",
     instrument: "Clarinet",
-    schoolOrHometown: "St. Joseph Central Catholic High School",
-    award: "Young People’s Concert Competition winner",
-    orchestra: "Marshall University Symphony Orchestra",
-    sourceTitle: "Marshall Digital Scholar: 2018 Family Concert",
     sourceUrl: "https://mds.marshall.edu/music_perf/947/",
   },
   {
     year: 2014,
     name: "Raleigh Frail",
     instrument: "Violin",
-    award: "Young People’s Concert Competition winner",
-    orchestra: "Marshall University Symphony Orchestra",
-    sourceTitle: "Marshall Digital Scholar: 2014 Family Concert",
     sourceUrl: "https://mds.marshall.edu/music_perf/239/",
   },
   {
     year: 2011,
     name: "Olivia Hay",
     instrument: "Violin",
-    schoolOrHometown: "Huntington, West Virginia",
-    award: "Young People’s Concert Competition winner",
-    orchestra: "Marshall University Symphony Orchestra",
-    sourceTitle: "Marshall Digital Scholar: 2011 Family Concert",
     sourceUrl: "https://mds.marshall.edu/music_perf/388/",
   },
   {
     year: 2009,
     name: "Erica Shen",
     instrument: "Piano",
-    schoolOrHometown: "George Washington High School, Charleston",
-    award: "Young People’s Concert Competition winner",
-    orchestra: "Marshall University Symphony Orchestra",
-    sourceTitle: "Marshall Digital Scholar: 2009 Family Concert",
     sourceUrl: "https://mds.marshall.edu/music_perf/586/",
   },
   {
     year: 2008,
     name: "Sesil Dikener",
     instrument: "Piano",
-    schoolOrHometown: "Huntington Middle School",
-    award: "Young People’s Competition winner",
-    orchestra: "Marshall University Symphony Orchestra",
-    sourceTitle: "Marshall Digital Scholar: 2008 Young People’s Concert",
     sourceUrl: "https://mds.marshall.edu/music_perf/818/",
   },
 ];
@@ -240,7 +218,7 @@ export const applicationSteps = [
   },
   {
     title: "Prepare the $30 check",
-    text: "Make the check payable to Young People’s Concert Committee. The notice does not provide an online payment option.",
+    text: "Make the check payable to Young People’s Concert Committee.",
   },
   {
     title: "Mail everything together",
@@ -256,13 +234,13 @@ export const faqs: Faq[] = [
   {
     question: "Who is eligible to enter?",
     answer:
-      "Any student aged 12–18 who lives in the Tri-State Area may apply. The notice does not define the specific counties included, so contact the chairperson if your eligibility is unclear.",
+      "Students aged 12–18 who live in the Tri-State Area may apply. Contact the chairperson if you are unsure whether your location qualifies.",
     status: "verified-current",
   },
   {
     question: "Which instruments are eligible? Are vocalists included?",
     answer:
-      "The audition is open to an instrumental soloist or vocalist performing with orchestra. The notice does not list separate divisions.",
+      "Instrumental soloists and vocalists may apply.",
     status: "verified-current",
   },
   {
@@ -280,7 +258,7 @@ export const faqs: Faq[] = [
   {
     question: "Is there an entry fee?",
     answer:
-      "Yes. Mail a $30 check payable to Young People’s Concert Committee with the application. Both must be received by December 14, 2026. The notice does not specify a refund policy.",
+      "Yes. Mail a $30 check payable to Young People’s Concert Committee with the application. Both must be received by December 14, 2026.",
     status: "verified-current",
   },
   {
@@ -292,7 +270,7 @@ export const faqs: Faq[] = [
   {
     question: "What if I need confirmation that my application arrived?",
     answer:
-      "The notice does not promise automatic confirmation. Contact chairperson Judith Short at 304-617-3367 or cathwayjcs@yahoo.com to ask about receipt.",
+      "Contact Judith Short at 304-617-3367 or cathwayjcs@yahoo.com to confirm receipt.",
     status: "verified-current",
   },
   {
@@ -304,7 +282,7 @@ export const faqs: Faq[] = [
   {
     question: "What does the winner receive?",
     answer:
-      "The chosen applicant is offered a performance with the Marshall University Symphony Orchestra and a $300 award. Second- and third-place awards will also be given; their amounts are not stated. The winner must attend the March 1 rehearsal and March 2–3 performances.",
+      "The winner receives a $300 award and performs with the Marshall University Symphony Orchestra. Second- and third-place awards are also given. The winner must attend the March 1 rehearsal and March 2–3 performances.",
     status: "verified-current",
   },
   {
@@ -316,7 +294,7 @@ export const faqs: Faq[] = [
   {
     question: "What consent is required for a minor?",
     answer:
-      "The supplied application asks for a student’s contact, school, teacher, accompanist, and repertoire information but does not state a guardian-consent or media-release process. Ask the organizer before sending any sensitive additional information.",
+      "The paper application asks for contact, school, teacher, accompanist, and repertoire details. Contact Judith Short if you have questions about information for a minor applicant.",
     status: "verified-current",
   },
   {

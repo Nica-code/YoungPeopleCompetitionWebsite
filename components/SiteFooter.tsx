@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { partners, siteConfig } from "@/content/site";
+import { siteConfig } from "@/content/site";
 
 export function SiteFooter() {
   return (
@@ -9,10 +9,7 @@ export function SiteFooter() {
           <span className="footer-monogram">YPC</span>
           <p className="footer-title">{siteConfig.name}</p>
         </div>
-        <p className="footer-mission">
-          A regional tradition connecting young musicians, careful preparation,
-          and the experience of live orchestral performance.
-        </p>
+        <p className="footer-mission">Supporting young musicians in Huntington, West Virginia.</p>
       </div>
 
       <div className="footer-grid">
@@ -33,24 +30,7 @@ export function SiteFooter() {
             <Link href="/accessibility">Accessibility</Link>
           </div>
         </div>
-        <div>
-          <p className="footer-label">Policies</p>
-          <div className="footer-links">
-            <Link href="/privacy">Privacy</Link>
-            <Link href="/terms">Terms</Link>
-          </div>
-        </div>
-        <div className="footer-partners">
-          <p className="footer-label">Organizations named in the 2027 notice</p>
-          <ul>
-            {partners.map((partner) => (
-              <li key={partner.name}>{partner.name}</li>
-            ))}
-          </ul>
-          <p className="footer-fine">
-            See the competition page for the event partnership details.
-          </p>
-        </div>
+        <div><p className="footer-label">Information</p><div className="footer-links"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div></div>
       </div>
 
       <div className="footer-bottom">

@@ -14,8 +14,8 @@ export default function ContactPage() {
     <>
       <PageIntro
         eyebrow="Contact"
-        title="A real person for your competition questions."
-        intro="For questions about eligibility, repertoire, the paper application, or receipt of your entry, contact Woman’s Club of Huntington chairperson Judith Short."
+        title="Get in touch."
+        intro="For questions about eligibility, repertoire, or applications, contact competition chairperson Judith Short."
         current="Contact"
       />
       <section className="section section-paper section-first">
@@ -32,7 +32,7 @@ export default function ContactPage() {
           </div>
           <div className="contact-status-card">
             <p className="eyebrow">Email</p><h2><a href="mailto:cathwayjcs@yahoo.com">cathwayjcs@yahoo.com</a></h2>
-            <p>The site has no online submission form. Do not email sensitive documents unless the chairperson requests them.</p>
+            <p>For questions about the 2027 competition.</p>
           </div>
         </div>
       </section>

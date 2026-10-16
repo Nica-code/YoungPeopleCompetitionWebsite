@@ -1,110 +1,37 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
-import { applicationSteps } from "@/content/site";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
   "Apply for the 2027 competition",
-  "How to mail a 2027 Young People’s Competition application and $30 check by December 14, 2026.",
+  "Print and mail your 2027 Young People’s Competition application and $30 check by December 14, 2026.",
   "/apply",
 );
-
-const formFields = [
-  ["Applicant name", "Email", "Phone"],
-  ["Mailing address", "Grade", "School"],
-  ["Teacher’s name", "Teacher’s email", "Teacher’s phone"],
-  ["Teacher’s address", "Accompanist’s name"],
-  ["Musical selection", "Composer", "Duration", "Instrument or voice"],
-] as const;
 
 export default function ApplyPage() {
   return (
     <>
-      <PageIntro
-        eyebrow="2027 application"
-        title="Prepare your entry. Mail it by December 14."
-        intro="The audition notice calls for a mailed application and a $30 check. This website does not accept submissions or payments online."
-        current="Apply"
-      >
-        <a className="button button-accent" href="#application-details">See application details</a>
+      <PageIntro eyebrow="2027 application" title="Apply for the 2027 competition." intro="Complete the paper application and mail it with a $30 check. Both must be received by December 14, 2026." current="Apply">
+        <Link className="button button-accent" href="/application-form">Open printable application</Link>
       </PageIntro>
-
-      <section className="section section-paper section-first" id="application-details">
-        <div className="container">
-          <div className="notice-panel notice-important">
-            <div><p className="notice-label">Received by Monday, December 14, 2026</p><h2>Send the application and check together.</h2></div>
-            <p>Mail to Judith Short, 121 Elwood Avenue, Huntington, WV 25705. Make the $30 check payable to Young People’s Concert Committee. A postmark alone does not meet the “received by” deadline.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-ivory" aria-labelledby="process-heading">
-        <div className="container">
-          <div className="section-heading split-heading">
-            <div><p className="eyebrow">How to enter</p><h2 id="process-heading">Five steps, from selection to check-in.</h2></div>
-            <p>The requirements below come from the 2027 audition notice. For questions about your eligibility or repertoire, contact the chairperson before mailing your entry.</p>
-          </div>
-          <ol className="application-steps application-steps-large">
-            {applicationSteps.map((step, index) => (
-              <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.text}</p></li>
-            ))}
+      <section className="section section-paper section-first" aria-labelledby="apply-steps-title">
+        <div className="container apply-simple-grid">
+          <div><p className="eyebrow">How to enter</p><h2 id="apply-steps-title">Three steps to audition day.</h2></div>
+          <ol className="apply-simple-steps">
+            <li><span>01</span><div><h3>Check the requirements</h3><p>Applicants must be ages 12–18 and live in the Tri-State Area. Prepare a memorized instrumental or vocal solo with orchestra, no longer than 12 minutes. Orchestra parts must be available for rent.</p></div></li>
+            <li><span>02</span><div><h3>Print the application</h3><p>Provide your contact and school information, teacher and accompanist details, and the title, composer, duration, and instrument or voice for your selection.</p><Link className="text-link" href="/application-form">Open printable application <span aria-hidden="true">→</span></Link></div></li>
+            <li><span>03</span><div><h3>Mail the application and fee</h3><p>Enclose a $30 check payable to Young People’s Concert Committee. Both items must arrive by Monday, December 14, 2026; a postmark alone is not enough.</p></div></li>
           </ol>
         </div>
       </section>
-
-      <section className="section section-paper" aria-labelledby="form-heading">
-        <div className="container content-split">
-          <div className="sticky-heading">
-            <p className="eyebrow">Application details</p><h2 id="form-heading">What the notice asks you to provide.</h2>
-            <p>The source document includes these fields. You can fill and print a paper version here; nothing is submitted online.</p>
-            <Link className="button button-outline" href="/application-form">Open printable application</Link>
-          </div>
-          <div className="form-field-groups">
-            {formFields.map((group, index) => (
-              <div className="form-field-group" key={index}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <ul>{group.map((field) => <li key={field}>{field}</li>)}</ul>
-              </div>
-            ))}
-          </div>
+      <section className="section section-ivory" aria-labelledby="mailing-title">
+        <div className="container apply-mail-grid">
+          <div><p className="eyebrow">Mail to</p><h2 id="mailing-title">Judith Short</h2><address>121 Elwood Avenue<br />Huntington, WV 25705</address></div>
+          <div><p className="eyebrow">Audition day</p><h2>Sunday, January 10, 2027</h2><p>Smith Music Hall, Marshall University. Soloist and accompanist must check in by 12:15 p.m.; auditions begin at 12:30 p.m. Late arrivals cannot audition.</p><Link className="text-link" href="/competition">See all competition details <span aria-hidden="true">→</span></Link></div>
         </div>
       </section>
-
-      <section className="payment-section" aria-labelledby="mail-heading">
-        <div className="container payment-grid">
-          <div>
-            <p className="eyebrow eyebrow-light">Mailing instructions</p>
-            <h2 id="mail-heading">One envelope. Two required items.</h2>
-            <p>Include your completed application and a $30 check payable to <strong>Young People’s Concert Committee</strong>. Both must reach the address by December 14, 2026.</p>
-          </div>
-          <div className="mailing-card">
-            <p className="mailing-card-label">Mail to</p>
-            <address>Judith Short<br />121 Elwood Avenue<br />Huntington, WV 25705</address>
-            <p>The supplied notice does not list an online form, electronic payment method, or refund policy.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-paper" aria-labelledby="audition-heading">
-        <div className="container content-split">
-          <div className="sticky-heading">
-            <p className="eyebrow">After you apply</p><h2 id="audition-heading">Be ready for audition day.</h2>
-            <p>Sunday, January 10, 2027 at Smith Music Hall, Marshall University.</p>
-          </div>
-          <div className="checklist-columns">
-            <div><h3>Check-in · 12:15 p.m.</h3><p>Soloist and accompanist must both check in by this time. Late arrivals cannot audition.</p></div>
-            <div><h3>Auditions · 12:30 p.m.</h3><p>Perform your memorized selection with a well-qualified accompanist. The music may last no more than 12 minutes.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="compact-cta">
-        <div className="container compact-cta-inner">
-          <div><p className="eyebrow eyebrow-light">Questions before mailing?</p><h2>Ask the competition chairperson.</h2></div>
-          <Link className="button button-accent" href="/contact">Contact Judith Short</Link>
-        </div>
-      </section>
+      <section className="compact-cta"><div className="container compact-cta-inner"><div><p className="eyebrow eyebrow-light">Questions?</p><h2>We’re here to help.</h2></div><Link className="button button-accent" href="/contact">Contact Judith Short</Link></div></section>
     </>
   );
 }

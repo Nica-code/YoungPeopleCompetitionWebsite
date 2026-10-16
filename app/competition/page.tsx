@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
-import { currentEdition, displayFact, siteConfig } from "@/content/site";
+import { currentEdition, displayFact } from "@/content/site";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
@@ -31,18 +31,16 @@ export default function CompetitionPage() {
     <>
       <PageIntro
         eyebrow="2027 competition"
-        title="A clear path from audition to orchestra."
-        intro="The 66th Annual Young People’s Concert offers a young instrumentalist or vocalist the opportunity to perform with the Marshall University Symphony Orchestra. Here are the practical details from the 2027 audition notice."
+        title="2027 competition details."
+        intro="Audition for a solo performance with the Marshall University Symphony Orchestra. Find the eligibility, repertoire, dates, and award information below."
         current="Competition"
-      >
-        <p className="last-updated">Updated <time dateTime="2026-10-15">{siteConfig.researchUpdated}</time></p>
-      </PageIntro>
+      />
 
       <section className="section section-paper section-first">
         <div className="container">
           <div className="notice-panel notice-important">
             <div><p className="notice-label">Deadline · December 14, 2026</p><h2>Mail your application and fee in time to arrive.</h2></div>
-            <p>The $30 check and application must both be received by December 14. The supplied notice had the wrong year; the organizer has corrected it to 2026.</p>
+            <p>The $30 check and application must both be received by December 14, 2026.</p>
           </div>
           <div className="fact-grid" aria-label="2027 competition facts">
             {currentEdition.facts.map((fact) => (
@@ -58,7 +56,7 @@ export default function CompetitionPage() {
         <div className="container content-split">
           <div className="sticky-heading">
             <p className="eyebrow">Audition essentials</p><h2 id="requirements-heading">Know the music. Know the room.</h2>
-            <p>Every requirement that affects your preparation is here, in one place. If the notice does not answer a question, ask the competition chairperson directly.</p>
+            <p>Review these requirements before selecting your audition music.</p>
           </div>
           <div className="rule-grid">
             {requirements.map((item) => (
@@ -74,7 +72,7 @@ export default function CompetitionPage() {
         <div className="container content-split">
           <div className="sticky-heading">
             <p className="eyebrow">Important dates</p><h2 id="dates-heading">From the mailbox to the concert hall.</h2>
-            <p>The selected soloist is required to be available for the rehearsal and all listed performances. All times are local to Huntington, West Virginia.</p>
+            <p>The selected soloist must attend the rehearsal and performances. All times are local to Huntington, West Virginia.</p>
           </div>
           <ol className="event-list">
             {events.map((event, index) => (
@@ -94,7 +92,7 @@ export default function CompetitionPage() {
           </div>
           <div className="checklist-panel">
             <p className="award-amount">$300</p>
-            <p className="checklist-intro">The chosen applicant receives a $300 award and the opportunity to perform with the Marshall University Symphony Orchestra. Second- and third-place awards will also be given; the notice does not state their amounts.</p>
+            <p className="checklist-intro">The chosen applicant receives a $300 award and the opportunity to perform with the Marshall University Symphony Orchestra. Second- and third-place awards will also be given.</p>
             <p>The performance is offered in conjunction with the orchestra under Dr. Alexandru Malaimare’s direction. The Woman’s Club of Huntington sponsors the event in cooperation with Cabell County Schools and the Marshall University School of Music.</p>
           </div>
         </div>

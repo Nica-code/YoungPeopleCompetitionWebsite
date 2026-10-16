@@ -42,7 +42,7 @@ export default function ApplicationFormPage() {
         <div className="container printable-wrap">
           <div className="printable-instructions">
             <p className="eyebrow">Before you print</p>
-            <p>This printable version mirrors the fields in the supplied audition notice. Check every entry, then print the page and mail it with your $30 check. If you need the original form, ask chairperson Judith Short.</p>
+            <p>Check every entry, then print the page and mail it with your $30 check. Contact Judith Short if you have questions.</p>
           </div>
           <div className="printable-form" aria-label="2027 Young People’s Competition paper application">
             <div className="printable-form-heading">
