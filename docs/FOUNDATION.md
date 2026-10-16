@@ -30,7 +30,7 @@ Use **YPC — Young People’s Competition** as the website identity because app
 | --- | --- | --- | --- | --- |
 | The Woman’s Club of Huntington is an active GFWC West Virginia club. | [GFWC WV clubs directory](https://www.gfwcwestvirginia.org/_files/ugd/47dfb4_486d7d39061142f69c7090b886a1dc5e.pdf) | 2024–2026 directory | High | Confirm preferred public naming and contact route |
 | Marshall University listed “MU Orchestra Young People’s Concerts” at Smith Music Hall. | [Marshall University events calendar](https://events.marshall.edu/calendar/day/2025/3/4) | March 4, 2025 | High | Confirm whether this concert included a competition winner and the current venue |
-| The Huntington Symphony Orchestra is an active professional orchestra with community and educational outreach. | [Huntington Symphony Orchestra](https://www.huntingtonsymphony.org/) | Current site reviewed July 2026 | High | Confirm whether HSO has any role in YPC |
+| The Huntington Symphony Orchestra is an active professional orchestra with community and educational outreach. The organizer confirmed that its members join the Marshall University Symphony Orchestra for the winner’s performance and that it sponsors the prizes. | [Huntington Symphony Orchestra](https://www.huntingtonsymphony.org/); organizer confirmation | October 2026 | High | None for current-edition wording |
 
 No recent official source located during this research confirmed current application dates, eligibility, fee, prize, audition format, accompanist requirements, adjudicators, payment recipient, or registration URL.
 
@@ -43,7 +43,7 @@ No recent official source located during this research confirmed current applica
 | A 2008 Marshall program calls the concert its 47th season, features competition winner Sesil Dikener, and thanks the Woman’s Club for its contribution. | [Marshall Digital Scholar, 2008 program](https://mds.marshall.edu/music_perf/818/) | March 4, 2008 | High | Confirm official founding year before publishing one |
 | A 2009 Marshall family concert identifies Erica Shen as winner of the Young People’s Concert Competition sponsored by the Woman’s Club of Huntington. | [Marshall Digital Scholar, 2009 program](https://mds.marshall.edu/music_perf/586/) | March 3, 2009 | High | None for archival use; image rights remain separate |
 | A 2011 Marshall family concert identifies Olivia Hay as the competition winner. | [Marshall Digital Scholar, 2011 program](https://mds.marshall.edu/music_perf/388/) | March 1, 2011 | High | None for archival use; image rights remain separate |
-| A 2014 Marshall family concert identifies Raleigh Frail as the competition winner. | [Marshall Digital Scholar, 2014 program](https://mds.marshall.edu/music_perf/239/) | March 4, 2014 | High | None for archival use; image rights remain separate |
+| A 2014 Marshall family concert identifies the competition winner as “Raleigh Frail”; the organizer corrected the name to Haleigh Frail for publication. | [Marshall Digital Scholar, 2014 program](https://mds.marshall.edu/music_perf/239/); organizer correction | March 4, 2014; October 2026 | High for year and instrument; organizer-confirmed spelling | Archive metadata may need correction |
 | A 2018 Marshall family concert identifies clarinetist Armâan Karimpour as the competition winner and credits the Woman’s Club. | [Marshall Digital Scholar, 2018 program](https://mds.marshall.edu/music_perf/947/) | 2018 | High | Confirm spelling from original program before expanded biography |
 | Marshall reported that violinist Isaiah Biele, a Young People’s Competition winner, performed with the Marshall University Symphony Orchestra in the 62nd Young People’s Concert; the concert was for Cabell County fifth graders and involved the Woman’s Club and Cabell County Board of Education. | [Marshall Board of Governors agenda](https://www.marshall.edu/board/files/April-26-2023-Board-of-Governors-Regular-Meeting_agenda.pdf) | April 26, 2023 | High | Confirm current organizer/partner wording |
 
@@ -52,7 +52,7 @@ These sources support the public phrase **“a Huntington tradition spanning mor
 ### Plausible but unconfirmed
 
 - A supplied Herald-Dispatch URL describes soloists chosen for a “63rd Young People’s Concert.” The page was inaccessible to the research tools, so names and details from that article are not used in the site.
-- The project brief proposes a partnership with the Huntington Symphony Orchestra. HSO’s own site confirms its educational mission, but no source located ties it to this competition.
+- The organizer confirmed the Huntington Symphony Orchestra’s current role: its members join the Marshall University Symphony Orchestra for the winner’s performance, and it sponsors the prizes. The Woman’s Club remains the concert sponsor.
 - Recent editions may use more than one selected soloist. The data model therefore supports multiple winners and award types per year.
 - The next competition may lead into a Marshall University Orchestra performance, but the current orchestra, conductor, concert format, and contractual relationship must be confirmed.
 

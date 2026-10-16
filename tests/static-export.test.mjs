@@ -40,6 +40,8 @@ test("renders a concise homepage with the current competition essentials", async
   assert.match(html, /January 10, 2027/i);
   assert.match(html, /Harin Lee/i);
   assert.match(html, /Marshall University/i);
+  assert.match(html, /joined by members of the Huntington Symphony Orchestra/i);
+  assert.match(html, /Huntington Symphony Orchestra also sponsors the prizes/i);
   assert.match(html, /Skip to main content/i);
   assert.match(html, /summary_large_image/i);
 
@@ -63,6 +65,9 @@ test("publishes the correct 2027 requirements and mailing route", async () => {
   assert.match(competition, /12 minutes/i);
   assert.match(competition, /\$300/i);
   assert.match(competition, /Mar 01/i);
+  assert.match(competition, /three copies of the score/i);
+  assert.match(competition, /three judges/i);
+  assert.match(competition, /joined by members of the Huntington Symphony Orchestra/i);
   assert.match(apply, /Young People(?:’|&#x27;)s Concert Committee/i);
   assert.match(apply, /121 Elwood Avenue/i);
   assert.match(contact, /cathwayjcs@yahoo\.com/i);
@@ -100,7 +105,7 @@ test("publishes a simple winners list and applicant safeguards", async () => {
     "Harin Lee",
     "Isaiah Biele",
     "Armâan Karimpour",
-    "Raleigh Frail",
+    "Haleigh Frail",
     "Olivia Hay",
     "Erica Shen",
     "Sesil Dikener",
@@ -109,6 +114,7 @@ test("publishes a simple winners list and applicant safeguards", async () => {
   }
 
   assert.doesNotMatch(winners, /Award|Orchestra|Portrait pending|View source|archive checklist/i);
+  assert.doesNotMatch(winners, /Raleigh Frail/i);
   assert.match(privacy, /minor/i);
   assert.match(privacy, /\$30 check/i);
   assert.match(accessibility, /WCAG 2\.2 AA/i);

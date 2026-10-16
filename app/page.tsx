@@ -28,7 +28,7 @@ export default function Home() {
           <div className="hero-copy">
             <p className="eyebrow eyebrow-light">{siteConfig.location} · 2027 competition</p>
             <h1>Your moment with the orchestra begins here.</h1>
-            <p className="hero-lede">Young musicians ages 12–18 are invited to audition for a solo performance with the Marshall University Symphony Orchestra.</p>
+            <p className="hero-lede">Young musicians ages 12–18 are invited to audition for a solo performance with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra.</p>
             <div className="button-row">
               <Link className="button button-accent" href="/apply">Apply for 2027</Link>
               <Link className="text-link text-link-light" href="/competition">Competition details <span aria-hidden="true">→</span></Link>
@@ -49,11 +49,11 @@ export default function Home() {
         <div className="container">
           <div className="section-heading split-heading">
             <div><p className="eyebrow">The opportunity</p><h2 id="home-essentials-title">A stage for young musicians.</h2></div>
-            <p>The selected soloist receives a $300 award and performs with the Marshall University Symphony Orchestra. The competition is sponsored by the Woman’s Club of Huntington.</p>
+            <p>The selected soloist receives a $300 award and performs with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. The Huntington Symphony Orchestra also sponsors the prizes.</p>
           </div>
           <div className="home-essentials-grid">
             <div><span>01</span><h3>Who can enter</h3><p>Instrumentalists and vocalists ages 12–18 who live in the Tri-State Area.</p></div>
-            <div><span>02</span><h3>What to prepare</h3><p>A memorized solo with orchestra, no longer than 12 minutes. Bring an accompanist.</p></div>
+            <div><span>02</span><h3>What to prepare</h3><p>A memorized solo with orchestra, no longer than 12 minutes. Bring an accompanist and three copies of your score for the judges.</p></div>
             <div><span>03</span><h3>When to apply</h3><p>Your application and $30 check must arrive by December 14, 2026.</p></div>
           </div>
         </div>

@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata(
 const requirements = [
   { number: "01", title: "Who may audition", text: "Students aged 12–18 who live in the Tri-State Area. Instrumental soloists and vocalists are welcome." },
   { number: "02", title: "What to perform", text: "A composition for solo instrument or voice with orchestra. One concerto movement is appropriate. The limit is 12 minutes, and orchestra parts must be available for rent." },
-  { number: "03", title: "How to prepare", text: "Audition music must be memorized. Bring a well-qualified accompanist who can support your performance." },
+  { number: "03", title: "How to prepare", text: "Audition music must be memorized. Bring a well-qualified accompanist and three copies of the score of your chosen audition repertoire for the three judges." },
   { number: "04", title: "When to arrive", text: "Both soloist and accompanist must check in by 12:15 p.m. on audition day. Auditions begin at 12:30 p.m.; late arrivals will not be permitted to audition." },
 ] as const;
 
@@ -32,7 +32,7 @@ export default function CompetitionPage() {
       <PageIntro
         eyebrow="2027 competition"
         title="2027 competition details."
-        intro="Audition for a solo performance with the Marshall University Symphony Orchestra. Find the eligibility, repertoire, dates, and award information below."
+        intro="Audition for a solo performance with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. Find the eligibility, repertoire, dates, and award information below."
         current="Competition"
       />
 
@@ -92,8 +92,8 @@ export default function CompetitionPage() {
           </div>
           <div className="checklist-panel">
             <p className="award-amount">$300</p>
-            <p className="checklist-intro">The chosen applicant receives a $300 award and the opportunity to perform with the Marshall University Symphony Orchestra. Second- and third-place awards will also be given.</p>
-            <p>The performance is offered in conjunction with the orchestra under Dr. Alexandru Malaimare’s direction. The Woman’s Club of Huntington sponsors the event in cooperation with Cabell County Schools and the Marshall University School of Music.</p>
+            <p className="checklist-intro">The chosen applicant receives a $300 award and the opportunity to perform with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. Second- and third-place awards will also be given.</p>
+            <p>The Huntington Symphony Orchestra also sponsors the prizes. The Woman’s Club of Huntington sponsors the concert in cooperation with Cabell County Schools and the Marshall University School of Music.</p>
           </div>
         </div>
       </section>

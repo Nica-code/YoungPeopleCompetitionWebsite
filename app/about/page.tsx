@@ -17,8 +17,8 @@ export default function AboutPage() {
         <div className="container about-simple-grid">
           <div><p className="eyebrow">The tradition</p><h2>Young talent on a larger stage.</h2></div>
           <div>
-            <p>The competition is part of Huntington’s long-running Young People’s Concert tradition. Each year, young instrumentalists and vocalists prepare for an audition. The selected soloist performs with the Marshall University Symphony Orchestra.</p>
-            <p>The Woman’s Club of Huntington sponsors the concert in cooperation with Cabell County Schools and the Marshall University School of Music. Together, they bring live orchestral music to young listeners and a meaningful performance opportunity to a young musician.</p>
+            <p>The competition is part of Huntington’s long-running Young People’s Concert tradition. Each year, young instrumentalists and vocalists prepare for an audition. The selected soloist performs with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra.</p>
+            <p>The Huntington Symphony Orchestra also sponsors the prizes. The Woman’s Club of Huntington sponsors the concert in cooperation with Cabell County Schools and the Marshall University School of Music. Together, they bring live orchestral music to young listeners and a meaningful performance opportunity to a young musician.</p>
           </div>
         </div>
       </section>

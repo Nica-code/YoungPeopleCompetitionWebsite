@@ -99,7 +99,7 @@ export const partners = [
   },
   {
     name: "Huntington Symphony Orchestra",
-    role: "Named in the 2027 audition notice through Executive Director Ian Jessee.",
+    role: "Its members join the Marshall University Symphony Orchestra for the winner’s performance; it also sponsors the prizes.",
     status: "verified-current" as ConfirmationStatus,
     href: "https://www.huntingtonsymphony.org/",
   },
@@ -124,7 +124,7 @@ export const participantBenefits = [
   {
     number: "04",
     title: "Move toward the orchestra",
-    text: "The selected soloist is offered a performance with the Marshall University Symphony Orchestra and a $300 award.",
+    text: "The selected soloist is offered a performance with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra, and a $300 award.",
   },
 ] as const;
 
@@ -183,9 +183,8 @@ export const winners: Winner[] = [
   },
   {
     year: 2014,
-    name: "Raleigh Frail",
+    name: "Haleigh Frail",
     instrument: "Violin",
-    sourceUrl: "https://mds.marshall.edu/music_perf/239/",
   },
   {
     year: 2011,
@@ -226,7 +225,7 @@ export const applicationSteps = [
   },
   {
     title: "Prepare for audition day",
-    text: "Memorize the music and arrange a qualified accompanist. Both soloist and accompanist must check in by 12:15 p.m. on January 10; late arrivals cannot audition.",
+    text: "Memorize the music, arrange a qualified accompanist, and bring three copies of the score of your chosen audition repertoire for the three judges. Both soloist and accompanist must check in by 12:15 p.m. on January 10; late arrivals cannot audition.",
   },
 ] as const;
 
@@ -246,7 +245,7 @@ export const faqs: Faq[] = [
   {
     question: "What repertoire may I perform?",
     answer:
-      "Choose a composition for solo instrument or voice with orchestra; one movement of a concerto is appropriate. The time limit is 12 minutes, orchestra parts must be available for rent, and audition music must be memorized. Bring a well-qualified accompanist.",
+      "Choose a composition for solo instrument or voice with orchestra; one movement of a concerto is appropriate. The time limit is 12 minutes, orchestra parts must be available for rent, and audition music must be memorized. Bring a well-qualified accompanist and three copies of the score of your chosen audition repertoire for the three judges.",
     status: "verified-current",
   },
   {
@@ -282,7 +281,7 @@ export const faqs: Faq[] = [
   {
     question: "What does the winner receive?",
     answer:
-      "The winner receives a $300 award and performs with the Marshall University Symphony Orchestra. Second- and third-place awards are also given. The winner must attend the March 1 rehearsal and March 2–3 performances.",
+      "The winner receives a $300 award and performs with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. The Huntington Symphony Orchestra also sponsors the prizes, including second- and third-place awards. The winner must attend the March 1 rehearsal and March 2–3 performances.",
     status: "verified-current",
   },
   {
