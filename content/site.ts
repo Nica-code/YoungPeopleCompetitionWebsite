@@ -286,7 +286,7 @@ export const faqs: Faq[] = [
   {
     question: "What does the winner receive?",
     answer:
-      "The winner receives a $300 award and performs with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. The Huntington Symphony Orchestra also sponsors the prizes, including second- and third-place awards. The winner must attend the March 1 rehearsal and March 2–3 performances.",
+      "The winner receives a $300 award and performs with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. Second prize receives $175 and third prize receives $75; those awards are monetary only and do not include an orchestra performance. The Huntington Symphony Orchestra also sponsors the prizes. The winner must attend the March 1 rehearsal and March 2–3 performances.",
     status: "verified-current",
   },
   {

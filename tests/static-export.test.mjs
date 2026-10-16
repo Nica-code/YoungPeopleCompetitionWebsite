@@ -78,6 +78,24 @@ test("publishes the correct 2027 requirements and mailing route", async () => {
   assert.doesNotMatch(apply, /Zelle|application ID/i);
 });
 
+test("makes the cash prizes and winner-only orchestra performance clear", async () => {
+  const [home, competition, faq] = await Promise.all([
+    page(""),
+    page("competition/"),
+    page("faq/"),
+  ]);
+
+  for (const html of [home, competition, faq]) {
+    assert.match(html, /\$175/);
+    assert.match(html, /\$75/);
+  }
+
+  assert.match(competition, /Second prize[\s\S]{0,120}\$175/i);
+  assert.match(competition, /Third prize[\s\S]{0,120}\$75/i);
+  assert.match(competition, /Only the winner performs with the orchestra/i);
+  assert.match(faq, /second.+\$175.+third.+\$75/i);
+});
+
 test("contact page offers email and call buttons without showing the contact details", async () => {
   const contact = await page("contact/");
 

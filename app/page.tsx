@@ -50,7 +50,7 @@ export default function Home() {
         <div className="container">
           <div className="section-heading split-heading">
             <div><p className="eyebrow">The opportunity</p><h2 id="home-essentials-title">A stage for young musicians.</h2></div>
-            <p>The selected soloist receives a $300 award and performs with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. The Huntington Symphony Orchestra also sponsors the prizes.</p>
+            <p>The winner receives $300 and performs with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. Second prize is $175 and third prize is $75; both are monetary awards only. The Huntington Symphony Orchestra also sponsors the prizes.</p>
           </div>
           <div className="home-essentials-grid">
             <div><span>01</span><h3>Who can enter</h3><p>Instrumentalists and vocalists ages 12–18 who live in the Tri-State Area.</p></div>

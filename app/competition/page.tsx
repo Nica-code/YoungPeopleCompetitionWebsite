@@ -94,8 +94,14 @@ export default function CompetitionPage() {
             <p className="eyebrow eyebrow-light">The opportunity</p><h2 id="award-heading">Perform with an orchestra. Share the stage with a community.</h2>
           </div>
           <div className="checklist-panel">
+            <p className="eyebrow eyebrow-light">First prize · Winner</p>
             <p className="award-amount">$300</p>
-            <p className="checklist-intro">The chosen applicant receives a $300 award and the opportunity to perform with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. Second- and third-place awards will also be given.</p>
+            <p className="checklist-intro">The winner receives a $300 award and performs with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra. Only the winner performs with the orchestra.</p>
+            <div className="additional-prizes" aria-label="Additional monetary prizes">
+              <div><span>Second prize</span><strong>$175</strong></div>
+              <div><span>Third prize</span><strong>$75</strong></div>
+            </div>
+            <p>Second and third prizes are monetary awards only.</p>
             <p>The Huntington Symphony Orchestra also sponsors the prizes. The Woman’s Club of Huntington sponsors the concert in cooperation with Cabell County Schools and the Marshall University School of Music.</p>
           </div>
         </div>
