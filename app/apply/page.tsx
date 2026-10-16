@@ -1,45 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
-import {
-  applicationStatuses,
-  applicationSteps,
-  currentEdition,
-} from "@/content/site";
+import { applicationSteps } from "@/content/site";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
-  "Apply",
-  "Prepare for the Young People’s Competition and understand the planned application, Zelle payment review, and confirmation stages.",
+  "Apply for the 2027 competition",
+  "How to mail a 2027 Young People’s Competition application and $30 check by December 14, 2026.",
   "/apply",
 );
+
+const formFields = [
+  ["Applicant name", "Email", "Phone"],
+  ["Mailing address", "Grade", "School"],
+  ["Teacher’s name", "Teacher’s email", "Teacher’s phone"],
+  ["Teacher’s address", "Accompanist’s name"],
+  ["Musical selection", "Composer", "Duration", "Instrument or voice"],
+] as const;
 
 export default function ApplyPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Apply"
-        title="Preparation can begin before the form opens."
-        intro="The application is intentionally closed while organizers confirm eligibility, repertoire, fee, venue, privacy terms, and the approved payment recipient."
+        eyebrow="2027 application"
+        title="Prepare your entry. Mail it by December 14."
+        intro="The audition notice calls for a mailed application and a $30 check. This website does not accept submissions or payments online."
         current="Apply"
       >
-        <span className="button button-disabled" aria-disabled="true">
-          Application not yet available
-        </span>
+        <a className="button button-accent" href="#application-details">See application details</a>
       </PageIntro>
 
-      <section className="section section-paper section-first">
+      <section className="section section-paper section-first" id="application-details">
         <div className="container">
           <div className="notice-panel notice-important">
-            <div>
-              <p className="notice-label">Current status</p>
-              <h2>Planning, not accepting entries.</h2>
-            </div>
-            <p>
-              {currentEdition.notice} No applicant information or payment
-              should be sent until an official form and recipient are published
-              here.
-            </p>
+            <div><p className="notice-label">Received by Monday, December 14, 2026</p><h2>Send the application and check together.</h2></div>
+            <p>Mail to Judith Short, 121 Elwood Avenue, Huntington, WV 25705. Make the $30 check payable to Young People’s Concert Committee. A postmark alone does not meet the “received by” deadline.</p>
           </div>
         </div>
       </section>
@@ -47,135 +42,67 @@ export default function ApplyPage() {
       <section className="section section-ivory" aria-labelledby="process-heading">
         <div className="container">
           <div className="section-heading split-heading">
-            <div>
-              <p className="eyebrow">Application sequence</p>
-              <h2 id="process-heading">Six stages. Two distinct confirmations.</h2>
-            </div>
-            <p>
-              “Application received” means the form arrived. “Application
-              complete” means staff has also verified payment and required
-              materials.
-            </p>
+            <div><p className="eyebrow">How to enter</p><h2 id="process-heading">Five steps, from selection to check-in.</h2></div>
+            <p>The requirements below come from the 2027 audition notice. For questions about your eligibility or repertoire, contact the chairperson before mailing your entry.</p>
           </div>
           <ol className="application-steps application-steps-large">
             {applicationSteps.map((step, index) => (
-              <li key={step.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </li>
+              <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.text}</p></li>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="section section-paper" aria-labelledby="checklist-heading">
+      <section className="section section-paper" aria-labelledby="form-heading">
         <div className="container content-split">
           <div className="sticky-heading">
-            <p className="eyebrow">Readiness checklist</p>
-            <h2 id="checklist-heading">What to have ready.</h2>
-            <p>
-              Final requirements may change. This checklist reflects the
-              minimum structure planned for a responsible application.
-            </p>
+            <p className="eyebrow">Application details</p><h2 id="form-heading">What the notice asks you to provide.</h2>
+            <p>The source document includes these fields. You can fill and print a paper version here; nothing is submitted online.</p>
+            <Link className="button button-outline" href="/application-form">Open printable application</Link>
           </div>
-          <div className="checklist-columns">
-            <div>
-              <h3>Musical details</h3>
-              <ul className="check-list check-list-dark">
-                <li>Instrument or voice category</li>
-                <li>Composer, title, movement, and edition</li>
-                <li>Accurate performance duration</li>
-                <li>Teacher and accompanist information</li>
-                <li>Orchestral-parts availability if requested</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Applicant details</h3>
-              <ul className="check-list check-list-dark">
-                <li>Minimum necessary contact information</li>
-                <li>Eligibility information</li>
-                <li>Parent or guardian consent for minors</li>
-                <li>Separate media-release preference</li>
-                <li>Entry fee only after official instructions</li>
-              </ul>
-            </div>
+          <div className="form-field-groups">
+            {formFields.map((group, index) => (
+              <div className="form-field-group" key={index}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <ul>{group.map((field) => <li key={field}>{field}</li>)}</ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="payment-section" aria-labelledby="payment-heading">
+      <section className="payment-section" aria-labelledby="mail-heading">
         <div className="container payment-grid">
           <div>
-            <p className="eyebrow eyebrow-light">Zelle, described honestly</p>
-            <h2 id="payment-heading">A transfer is not an automatic confirmation.</h2>
-            <p>
-              If Zelle is approved, the website will issue an application ID
-              such as <code>YPC-2027-A7K4</code>. The applicant will use that
-              ID in the memo. An authorized administrator will match and verify
-              the transfer before the application becomes complete.
-            </p>
+            <p className="eyebrow eyebrow-light">Mailing instructions</p>
+            <h2 id="mail-heading">One envelope. Two required items.</h2>
+            <p>Include your completed application and a $30 check payable to <strong>Young People’s Concert Committee</strong>. Both must reach the address by December 14, 2026.</p>
           </div>
-          <div className="payment-truths">
-            <div>
-              <span>01</span>
-              <p>The site will publish one approved recipient.</p>
-            </div>
-            <div>
-              <span>02</span>
-              <p>Clicking “payment sent” will never mark a record paid.</p>
-            </div>
-            <div>
-              <span>03</span>
-              <p>Staff verification triggers the completion email.</p>
-            </div>
-            <div>
-              <span>04</span>
-              <p>The future data model can support a different provider.</p>
-            </div>
+          <div className="mailing-card">
+            <p className="mailing-card-label">Mail to</p>
+            <address>Judith Short<br />121 Elwood Avenue<br />Huntington, WV 25705</address>
+            <p>The supplied notice does not list an online form, electronic payment method, or refund policy.</p>
           </div>
         </div>
       </section>
 
-      <section className="section section-paper" aria-labelledby="status-heading">
+      <section className="section section-paper" aria-labelledby="audition-heading">
         <div className="container content-split">
           <div className="sticky-heading">
-            <p className="eyebrow">Application status</p>
-            <h2 id="status-heading">Language families can trust.</h2>
-            <p>
-              Each status represents a real operational state. Staff changes
-              will be logged in a future secure system.
-            </p>
+            <p className="eyebrow">After you apply</p><h2 id="audition-heading">Be ready for audition day.</h2>
+            <p>Sunday, January 10, 2027 at Smith Music Hall, Marshall University.</p>
           </div>
-          <ol className="status-flow">
-            {applicationStatuses.map((status, index) => (
-              <li key={status}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <code>{status}</code>
-                <p>
-                  {status === "complete"
-                    ? "All required materials and payment have been verified."
-                    : status === "payment_under_review"
-                      ? "Staff is matching the transfer to the application ID."
-                      : status === "submitted"
-                        ? "The form has been received; completion is not yet confirmed."
-                        : "A supported state for transparent application handling."}
-                </p>
-              </li>
-            ))}
-          </ol>
+          <div className="checklist-columns">
+            <div><h3>Check-in · 12:15 p.m.</h3><p>Soloist and accompanist must both check in by this time. Late arrivals cannot audition.</p></div>
+            <div><h3>Auditions · 12:30 p.m.</h3><p>Perform your memorized selection with a well-qualified accompanist. The music may last no more than 12 minutes.</p></div>
+          </div>
         </div>
       </section>
 
       <section className="compact-cta">
         <div className="container compact-cta-inner">
-          <div>
-            <p className="eyebrow eyebrow-light">Before applications open</p>
-            <h2>Review the unanswered questions.</h2>
-          </div>
-          <Link className="button button-accent" href="/faq">
-            Read the FAQ
-          </Link>
+          <div><p className="eyebrow eyebrow-light">Questions before mailing?</p><h2>Ask the competition chairperson.</h2></div>
+          <Link className="button button-accent" href="/contact">Contact Judith Short</Link>
         </div>
       </section>
     </>

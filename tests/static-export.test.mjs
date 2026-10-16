@@ -8,6 +8,7 @@ const routes = [
   "",
   "competition/",
   "apply/",
+  "application-form/",
   "winners/",
   "about/",
   "faq/",
@@ -35,7 +36,8 @@ test("renders the finished, source-conscious homepage", async () => {
 
   assert.match(html, /Young People(?:’|&#x27;)s Competition/i);
   assert.match(html, /Huntington, West Virginia/i);
-  assert.match(html, /Applications are not yet open/i);
+  assert.match(html, /December 14, 2026/i);
+  assert.match(html, /January 10, 2027/i);
   assert.match(html, /more than six decades/i);
   assert.match(html, /Marshall University/i);
   assert.match(html, /Skip to main content/i);
@@ -46,17 +48,28 @@ test("renders the finished, source-conscious homepage", async () => {
   assert.doesNotMatch(html, /Starter Project/i);
 });
 
-test("keeps unknown current-edition facts visibly unconfirmed", async () => {
-  const [competition, apply] = await Promise.all([
+test("publishes the correct 2027 requirements and mailing route", async () => {
+  const [competition, apply, contact, form] = await Promise.all([
     page("competition/"),
     page("apply/"),
+    page("contact/"),
+    page("application-form/"),
   ]);
 
-  assert.match(competition, /To be confirmed/i);
-  assert.match(competition, /Confirmation needed/i);
-  assert.match(apply, /Application not yet available/i);
-  assert.match(apply, /payment has been verified/i);
-  assert.doesNotMatch(apply, /payment confirmed[^<]*automatically/i);
+  assert.match(competition, /December 14, 2026/i);
+  assert.match(competition, /Sunday, January 10, 2027/i);
+  assert.match(competition, /12:15 p\.m\./i);
+  assert.match(competition, /12 minutes/i);
+  assert.match(competition, /\$300/i);
+  assert.match(competition, /Mar 01/i);
+  assert.match(apply, /Young People(?:’|&#x27;)s Concert Committee/i);
+  assert.match(apply, /121 Elwood Avenue/i);
+  assert.match(contact, /cathwayjcs@yahoo\.com/i);
+  assert.match(contact, /304-617-3367/i);
+  assert.match(form, /2027 audition application/i);
+  assert.match(form, /Teacher(?:’|&#x27;)s name/i);
+  assert.match(form, /Nothing entered here is sent to or stored/i);
+  assert.doesNotMatch(apply, /Zelle|application ID/i);
 });
 
 test("publishes a cited winners archive and applicant safeguards", async () => {
@@ -79,6 +92,6 @@ test("publishes a cited winners archive and applicant safeguards", async () => {
 
   assert.match(winners, /View source/i);
   assert.match(privacy, /minor/i);
-  assert.match(privacy, /Zelle/i);
+  assert.match(privacy, /\$30 check/i);
   assert.match(accessibility, /WCAG 2\.2 AA/i);
 });

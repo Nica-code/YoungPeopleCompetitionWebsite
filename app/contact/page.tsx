@@ -1,134 +1,54 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
-import { partners, siteConfig } from "@/content/site";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
-  "Contact and organizer decisions",
-  "Find the current YPC contact status and the decisions organizers must approve before applications can open.",
+  "Contact the competition",
+  "Questions about the 2027 Young People’s Competition? Reach chairperson Judith Short by phone or email.",
   "/contact",
 );
-
-const organizerDecisions = [
-  "Official competition name and presenting entity",
-  "Current roles for every partner organization",
-  "Application opening date and deadline",
-  "Competition and concert dates",
-  "Eligible ages or grades and geographic area",
-  "Eligible instruments, voice, and divisions",
-  "Repertoire, duration, memorization, and parts rules",
-  "Accompanist responsibilities",
-  "Audition venue, format, access, and schedule",
-  "Judges, criteria, feedback, and results process",
-  "Entry fee, refund policy, prize, and winner opportunity",
-  "Official application form",
-  "Approved Zelle recipient and reconciliation owner",
-  "Public contact email and response expectations",
-  "Minor consent, privacy, and data-retention policies",
-  "Media-release choices",
-  "Winner-publication permissions",
-  "Authorized logos, photographs, programs, and video",
-] as const;
 
 export default function ContactPage() {
   return (
     <>
       <PageIntro
         eyebrow="Contact"
-        title="One official contact point—once the organizer approves it."
-        intro="A public YPC email address has not been verified for this release. The site avoids publishing a personal address from a directory or inventing a contact form that cannot deliver."
+        title="A real person for your competition questions."
+        intro="For questions about eligibility, repertoire, the paper application, or receipt of your entry, contact Woman’s Club of Huntington chairperson Judith Short."
         current="Contact"
       />
-
       <section className="section section-paper section-first">
         <div className="container contact-status-grid">
           <div className="contact-status-card contact-status-primary">
-            <p className="eyebrow eyebrow-light">YPC contact</p>
-            <h2>Awaiting organizer confirmation</h2>
-            <p>
-              Placeholder: <code>[CONTACT EMAIL]</code>
-            </p>
-            <span className="button button-disabled button-disabled-light" aria-disabled="true">
-              Email address not yet published
-            </span>
+            <p className="eyebrow eyebrow-light">Competition chairperson</p>
+            <h2>Judith Short</h2>
+            <p>Woman’s Club of Huntington</p>
+            <a className="button button-accent" href="mailto:cathwayjcs@yahoo.com">Email Judith</a>
           </div>
           <div className="contact-status-card">
-            <p className="eyebrow">Application questions</p>
-            <h2>Hold submissions and payments.</h2>
-            <p>
-              Applications are closed. Do not send applicant information,
-              identity documents, repertoire files, or fees until this site
-              publishes an official route.
-            </p>
+            <p className="eyebrow">Call</p><h2><a href="tel:+13046173367">304-617-3367</a></h2>
+            <p>Ask about the 2027 audition or the required mailed application.</p>
           </div>
           <div className="contact-status-card">
-            <p className="eyebrow">Research & archive</p>
-            <h2>Build the record with permission.</h2>
-            <p>
-              Marshall Special Collections is the logical institutional source
-              for reconciling editions, programs, and historical winners.
-            </p>
-            <a
-              className="text-link"
-              href="https://mds.marshall.edu/sc_finding_aids/169/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View the finding aid <span aria-hidden="true">↗</span>
-            </a>
+            <p className="eyebrow">Email</p><h2><a href="mailto:cathwayjcs@yahoo.com">cathwayjcs@yahoo.com</a></h2>
+            <p>The site has no online submission form. Do not email sensitive documents unless the chairperson requests them.</p>
           </div>
         </div>
       </section>
-
-      <section className="section section-ivory" aria-labelledby="decisions-heading">
+      <section className="section section-ivory" aria-labelledby="mail-heading">
         <div className="container content-split">
           <div className="sticky-heading">
-            <p className="eyebrow">Organizer checklist</p>
-            <h2 id="decisions-heading">Decisions required before applications open.</h2>
-            <p>
-              Once these fields are approved, they can be entered in the
-              central content file and update the full website.
-            </p>
+            <p className="eyebrow">Application mailing address</p>
+            <h2 id="mail-heading">Send your entry before the deadline.</h2>
+            <p>The application and $30 check must be received by December 14, 2026.</p>
           </div>
-          <ol className="decision-checklist">
-            {organizerDecisions.map((decision, index) => (
-              <li key={decision}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{decision}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="section section-paper" aria-labelledby="institution-contact-heading">
-        <div className="container">
-          <div className="section-heading split-heading">
-            <div>
-              <p className="eyebrow">Institutional websites</p>
-              <h2 id="institution-contact-heading">Verified public destinations.</h2>
-            </div>
-            <p>
-              These links are for institution-level information. They are not a
-              substitute for a confirmed YPC application contact.
-            </p>
+          <div className="mailing-card mailing-card-light">
+            <p className="mailing-card-label">Mail to</p>
+            <address>Judith Short<br />121 Elwood Avenue<br />Huntington, WV 25705</address>
+            <p>Make checks payable to Young People’s Concert Committee.</p>
+            <Link className="text-link" href="/apply">Review how to apply <span aria-hidden="true">→</span></Link>
           </div>
-          <div className="institution-links">
-            {partners.map((partner) => (
-              <a
-                href={partner.href}
-                target="_blank"
-                rel="noreferrer"
-                key={partner.name}
-              >
-                <span>{partner.name}</span>
-                <i aria-hidden="true">↗</i>
-              </a>
-            ))}
-          </div>
-          <p className="contact-updated">
-            Contact status reviewed {siteConfig.researchUpdated}.
-          </p>
         </div>
       </section>
     </>

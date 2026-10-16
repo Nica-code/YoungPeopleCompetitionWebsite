@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
   "Terms of use",
-  "Read the draft terms and informational status of the Young People’s Competition website.",
+  "Read the informational terms for the Young People’s Competition website.",
   "/terms",
 );
 
@@ -14,8 +14,8 @@ export default function TermsPage() {
     <>
       <PageIntro
         eyebrow="Terms"
-        title="Information first. Official rules before entry."
-        intro="These draft terms describe the current informational website. Organizers should review and approve final legal language before applications open."
+        title="Information for applicants and families."
+        intro="The 2027 competition details on this site are based on the supplied audition notice, with the deadline and audition weekday corrected by the organizer."
         current="Terms"
       />
       <section className="section section-paper section-first">
@@ -25,20 +25,18 @@ export default function TermsPage() {
             <strong>Organizer and counsel review required</strong>
           </aside>
           <article className="legal-prose">
-            <h2>Informational preview</h2>
+            <h2>Informational website</h2>
             <p>
-              This website does not currently offer an open competition entry,
-              accept payment, guarantee eligibility, promise an award, or
-              confirm a performance engagement. Fields labeled pending or
-              provisional are not official rules.
+              This website publishes the 2027 audition notice in an accessible
+              format. It does not receive applications or payments. Applicants
+              must send the paper entry and check as described on the Apply page.
             </p>
 
             <h2>Authoritative competition rules</h2>
             <p>
-              Once approved, the edition-specific Competition page will be the
-              accessible source of current rules. A downloadable PDF may be
-              provided as a convenience. If an inconsistency is discovered,
-              organizers must publish a correction and communicate material
+              The Competition page presents the current audition details from
+              the organizer-supplied notice. If an inconsistency is discovered,
+              organizers should publish a correction and communicate material
               changes to affected applicants.
             </p>
 
@@ -67,9 +65,8 @@ export default function TermsPage() {
 
             <h2>Contact</h2>
             <p>
-              The official contact route is pending organizer approval. Do not
-              send applications or payments based on information from an
-              unofficial source.
+              Direct questions to chairperson Judith Short using the details
+              on the Contact page. Mail entries only to the published address.
             </p>
             <Link className="text-link" href="/competition">
               View competition status <span aria-hidden="true">→</span>

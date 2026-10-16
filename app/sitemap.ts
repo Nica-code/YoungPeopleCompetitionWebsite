@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "competition/",
     "apply/",
+    "application-form/",
     "winners/",
     "about/",
     "faq/",
@@ -19,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map((route) => ({
     url: `${siteConfig.siteUrl}${route}`,
-    lastModified: new Date("2026-07-28"),
+    lastModified: new Date("2026-10-15"),
     changeFrequency:
       route === "" || route === "competition/" || route === "apply/"
         ? "monthly"

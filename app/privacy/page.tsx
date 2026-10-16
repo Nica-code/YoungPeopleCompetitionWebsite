@@ -29,7 +29,8 @@ export default function PrivacyPage() {
             <p>
               YPC does not intentionally collect names, email addresses,
               application materials, payment information, or information about
-              minors through this first release. No YPC analytics product,
+              minors through this website. The 2027 paper application is
+              mailed to the chairperson, not submitted here. No YPC analytics product,
               advertising tracker, newsletter form, or contact form is
               configured.
             </p>
@@ -59,17 +60,15 @@ export default function PrivacyPage() {
 
             <h2>Payment information</h2>
             <p>
-              The website must never collect a bank password or represent a
-              Zelle transfer as automatically verified. Staff should record
-              only the minimum reconciliation details needed to match a payment
-              to an application ID.
+              The 2027 notice requires a $30 check payable to Young People’s
+              Concert Committee, mailed with the application. This website does
+              not process or verify payments.
             </p>
 
             <h2>Questions</h2>
             <p>
-              A privacy contact will be added after organizers approve the
-              public YPC email address. Until then, do not send personal
-              information through an unofficial channel.
+              Contact chairperson Judith Short with privacy questions. Avoid
+              emailing sensitive applicant information unless requested.
             </p>
             <Link className="text-link" href="/contact">
               View contact status <span aria-hidden="true">→</span>

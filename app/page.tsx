@@ -16,7 +16,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 const homeMetadata = pageMetadata(
   "Young People’s Competition in Huntington, West Virginia",
-  "Meet YPC: a regional music competition connected to Huntington’s more-than-six-decade Young People’s Concert tradition.",
+  "Apply for the 2027 Young People’s Competition: auditions January 10, 2027, with applications due December 14, 2026.",
   "/",
 );
 
@@ -44,13 +44,13 @@ export default function Home() {
             <p className="eyebrow eyebrow-light">{siteConfig.location}</p>
             <h1>Your moment with the orchestra begins here.</h1>
             <p className="hero-lede">
-              YPC invites the region’s young musicians to prepare, be heard,
-              and pursue the opportunity to step from solo practice into live
-              orchestral performance.
+              The 2027 Young People’s Competition invites Tri-State musicians
+              ages 12–18 to audition for a solo performance with the Marshall
+              University Symphony Orchestra.
             </p>
             <div className="button-row">
               <Link className="button button-accent" href="/apply">
-                Prepare to apply
+                How to apply
               </Link>
               <Link className="text-link text-link-light" href="/competition">
                 View competition details <span aria-hidden="true">→</span>
@@ -58,10 +58,10 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="edition-panel" aria-label="Next competition details">
+          <aside className="edition-panel" aria-label="2027 competition details">
             <div className="edition-panel-head">
               <p>{currentEdition.title}</p>
-              <StatusBadge status="pending" />
+              <StatusBadge status="verified-current" />
             </div>
             <dl>
               {currentEdition.facts.map((fact) => (
@@ -73,7 +73,7 @@ export default function Home() {
             </dl>
             <p className="edition-note">
               {currentEdition.notice}{" "}
-              <Link href="/contact">See what organizers still need to confirm.</Link>
+              <Link href="/apply">See mailing instructions.</Link>
             </p>
           </aside>
         </div>
@@ -90,8 +90,8 @@ export default function Home() {
               A Huntington music tradition
             </p>
             <p className="credibility-statement">
-              Historically sponsored by the Woman’s Club of Huntington and
-              performed with Marshall University ensembles.
+              Sponsored by the Woman’s Club of Huntington, with the 2027
+              soloist performing alongside the Marshall University Symphony Orchestra.
             </p>
           </div>
           <div className="partner-wordmarks" aria-label="Organizations">
@@ -141,9 +141,8 @@ export default function Home() {
               Know the requirements before you choose your repertoire.
             </h2>
             <p>
-              Official rules will live on the website—not only in a PDF—so
-              students, families, teachers, and accompanists can find the same
-              current answer.
+              Read the age, repertoire, timing, and check-in requirements
+              before preparing your application and audition.
             </p>
             <Link className="text-link" href="/competition">
               Explore all requirements <span aria-hidden="true">→</span>
@@ -151,18 +150,18 @@ export default function Home() {
           </div>
           <div className="decision-list">
             {[
-              ["Who may enter", "Age, grade, and geographic limits are pending."],
+              ["Who may enter", "Students ages 12–18 living in the Tri-State Area."],
               [
                 "What may be performed",
-                "Instrument, voice, repertoire, and duration rules are pending.",
+                "An instrumental or vocal solo with orchestra, up to 12 minutes.",
               ],
               [
                 "How auditions work",
-                "Venue, format, judges, accompaniment, and scheduling are pending.",
+                "January 10 at Smith Music Hall; memorize music and bring an accompanist.",
               ],
               [
                 "What the winner receives",
-                "Historical soloist opportunities are documented; the next award is pending.",
+                "A solo performance with the orchestra and a $300 award.",
               ],
             ].map(([title, text], index) => (
               <div className="decision-item" key={title}>
@@ -271,12 +270,11 @@ export default function Home() {
           <div className="section-heading split-heading">
             <div>
               <p className="eyebrow">How to apply</p>
-              <h2 id="apply-heading">A clear path, with no false confirmations.</h2>
+              <h2 id="apply-heading">A clear path from preparation to mailing.</h2>
             </div>
             <p>
-              The planned process separates form submission, payment review,
-              and final completion so every family knows exactly what has
-              happened.
+              The notice calls for a paper application and a $30 check,
+              received by December 14, 2026. This site does not collect entries.
             </p>
           </div>
           <ol className="application-steps">
@@ -290,7 +288,7 @@ export default function Home() {
           </ol>
           <div className="section-action">
             <Link className="button button-dark" href="/apply">
-              Review the application plan
+              Review mailing instructions
             </Link>
           </div>
         </div>
@@ -302,8 +300,8 @@ export default function Home() {
             <p className="eyebrow">Questions, answered plainly</p>
             <h2 id="faq-heading">Start with what matters most.</h2>
             <p className="section-copy">
-              Pending facts are labeled instead of guessed. As organizers
-              approve each detail, the same answer updates everywhere.
+              Find the published 2027 requirements in plain language,
+              including the deadline, audition day, and award.
             </p>
             <Link className="text-link" href="/faq">
               View every question <span aria-hidden="true">→</span>
@@ -328,16 +326,16 @@ export default function Home() {
         <div className="container final-cta-grid">
           <div>
             <p className="eyebrow eyebrow-light">Prepare now</p>
-            <h2>Choose the music. Build the performance. Watch for the date.</h2>
+            <h2>Choose the music. Build the performance. Mail your entry.</h2>
           </div>
           <div>
             <p>
-              Applications will open only after the next edition’s rules, fee,
-              venue, and payment instructions are confirmed.
+              Applications and the $30 fee must be received by
+              December 14, 2026. Auditions take place January 10, 2027.
             </p>
             <div className="button-row">
               <Link className="button button-accent" href="/apply">
-                See application readiness
+                How to apply
               </Link>
               <Link className="text-link text-link-light" href="/contact">
                 Contact & updates <span aria-hidden="true">→</span>

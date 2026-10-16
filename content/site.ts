@@ -36,8 +36,8 @@ export const siteConfig = {
     "A regional music competition connected to Huntington’s long-running Young People’s Concert tradition.",
   siteUrl: "https://nica-code.github.io/YoungPeopleCompetitionWebsite/",
   repositoryName: "YoungPeopleCompetitionWebsite",
-  researchUpdated: "July 28, 2026",
-  publicContactEmail: null as string | null,
+  researchUpdated: "October 15, 2026",
+  publicContactEmail: "cathwayjcs@yahoo.com",
 };
 
 export const navigation = [
@@ -50,41 +50,41 @@ export const navigation = [
 ] as const;
 
 export const currentEdition = {
-  title: "Next competition",
-  year: null as number | null,
-  status: "planning" as const,
+  title: "2027 auditions",
+  year: 2027,
+  status: "announced" as const,
   notice:
-    "Applications are not yet open. The organizer is confirming the next edition’s rules, dates, fee, venue, and performance partnership.",
+    "Applications and the $30 entry fee must be received by December 14, 2026. Auditions are Sunday, January 10, 2027, at 12:30 p.m.",
   facts: [
     {
       label: "Application deadline",
-      value: null,
-      placeholder: "[APPLICATION DEADLINE]",
-      status: "pending",
+      value: "December 14, 2026",
+      placeholder: "Application and fee received by this date",
+      status: "verified-current",
     },
     {
-      label: "Competition date",
-      value: null,
-      placeholder: "[COMPETITION DATE]",
-      status: "pending",
+      label: "Audition date",
+      value: "Sunday, January 10, 2027",
+      placeholder: "12:30 p.m. · check in by 12:15 p.m.",
+      status: "verified-current",
     },
     {
       label: "Eligibility",
-      value: null,
-      placeholder: "[ELIGIBLE GRADES OR AGES]",
-      status: "pending",
+      value: "Ages 12–18 in the Tri-State Area",
+      placeholder: "Instrumentalists and vocalists",
+      status: "verified-current",
     },
     {
-      label: "Location",
-      value: null,
-      placeholder: "[VENUE]",
-      status: "pending",
+      label: "Audition location",
+      value: "Smith Music Hall · Marshall University",
+      placeholder: "Huntington, West Virginia",
+      status: "verified-current",
     },
     {
       label: "Entry fee",
-      value: null,
-      placeholder: "[ENTRY FEE]",
-      status: "pending",
+      value: "$30 by check",
+      placeholder: "Payable to Young People’s Concert Committee",
+      status: "verified-current",
     },
   ] satisfies ImportantFact[],
 };
@@ -92,20 +92,20 @@ export const currentEdition = {
 export const partners = [
   {
     name: "The Woman’s Club of Huntington",
-    role: "Documented civic sponsor and steward of the Young People’s Concert tradition.",
-    status: "verified-historical" as ConfirmationStatus,
+    role: "Sponsor of the 66th Annual Young People’s Concert.",
+    status: "verified-current" as ConfirmationStatus,
     href: "https://www.gfwcwestvirginia.org/join",
   },
   {
     name: "Marshall University School of Music",
-    role: "Documented home of Young People’s Concert performances, including a March 2025 orchestra event.",
+    role: "Cooperating institution and home of the Marshall University Symphony Orchestra.",
     status: "verified-current" as ConfirmationStatus,
     href: "https://www.marshall.edu/music/",
   },
   {
     name: "Huntington Symphony Orchestra",
-    role: "Named as a proposed partner in the project brief; its current YPC role is awaiting confirmation.",
-    status: "provisional" as ConfirmationStatus,
+    role: "Named in the 2027 audition notice through Executive Director Ian Jessee.",
+    status: "verified-current" as ConfirmationStatus,
     href: "https://www.huntingtonsymphony.org/",
   },
 ] as const;
@@ -114,7 +114,7 @@ export const participantBenefits = [
   {
     number: "01",
     title: "Prepare with purpose",
-    text: "Shape a polished performance around clear repertoire and audition expectations once the edition rules are approved.",
+    text: "Prepare an orchestral solo or concerto movement of no more than 12 minutes, with music memorized for the audition.",
   },
   {
     number: "02",
@@ -129,7 +129,7 @@ export const participantBenefits = [
   {
     number: "04",
     title: "Move toward the orchestra",
-    text: "Historical winners have appeared as featured soloists with Marshall University ensembles; the next winner opportunity is being confirmed.",
+    text: "The selected soloist is offered a performance with the Marshall University Symphony Orchestra and a $300 award.",
   },
 ] as const;
 
@@ -231,83 +231,69 @@ export const winners: Winner[] = [
 
 export const applicationSteps = [
   {
-    title: "Review the approved rules",
-    text: "Confirm eligibility, repertoire, duration, memorization, accompanist, and orchestral-parts requirements.",
+    title: "Check eligibility and repertoire",
+    text: "Applicants must be 12–18 and live in the Tri-State Area. Choose an orchestral solo or concerto movement lasting no more than 12 minutes; orchestra parts must be rentable.",
   },
   {
-    title: "Prepare application materials",
-    text: "Gather applicant and guardian details, repertoire information, consents, and any approved uploads.",
+    title: "Gather the requested information",
+    text: "Include applicant contact details, grade and school, teacher and accompanist details, plus the selection title, composer, duration, and instrument or voice.",
   },
   {
-    title: "Submit the application",
-    text: "Use the official form. A future integrated form will generate a readable application ID.",
+    title: "Prepare the $30 check",
+    text: "Make the check payable to Young People’s Concert Committee. The notice does not provide an online payment option.",
   },
   {
-    title: "Follow payment instructions",
-    text: "If Zelle is approved, include the application ID in the memo and use only the recipient published on this site.",
+    title: "Mail everything together",
+    text: "Send the completed application and check to Judith Short, 121 Elwood Avenue, Huntington, WV 25705. Both must be received by December 14, 2026.",
   },
   {
-    title: "Receive application confirmation",
-    text: "This confirms submission only. It does not mean that payment has been verified.",
+    title: "Prepare for audition day",
+    text: "Memorize the music and arrange a qualified accompanist. Both soloist and accompanist must check in by 12:15 p.m. on January 10; late arrivals cannot audition.",
   },
-  {
-    title: "Receive completion notice",
-    text: "After staff verifies payment and required materials, a separate message confirms that the application is complete.",
-  },
-] as const;
-
-export const applicationStatuses = [
-  "draft",
-  "submitted",
-  "payment_pending",
-  "payment_under_review",
-  "complete",
-  "incomplete",
-  "withdrawn",
 ] as const;
 
 export const faqs: Faq[] = [
   {
     question: "Who is eligible to enter?",
     answer:
-      "The next edition’s age or grade limits and geographic eligibility have not been confirmed. The site will publish those rules before applications open; please do not rely on requirements from an earlier year.",
-    status: "pending",
+      "Any student aged 12–18 who lives in the Tri-State Area may apply. The notice does not define the specific counties included, so contact the chairperson if your eligibility is unclear.",
+    status: "verified-current",
   },
   {
     question: "Which instruments are eligible? Are vocalists included?",
     answer:
-      "Eligible instruments, voice eligibility, and any competition divisions are awaiting organizer approval.",
-    status: "pending",
+      "The audition is open to an instrumental soloist or vocalist performing with orchestra. The notice does not list separate divisions.",
+    status: "verified-current",
   },
   {
     question: "What repertoire may I perform?",
     answer:
-      "Repertoire type, performance duration, memorization, accompaniment, and orchestral-parts requirements are not yet approved for the next edition.",
-    status: "pending",
+      "Choose a composition for solo instrument or voice with orchestra; one movement of a concerto is appropriate. The time limit is 12 minutes, orchestra parts must be available for rent, and audition music must be memorized. Bring a well-qualified accompanist.",
+    status: "verified-current",
   },
   {
     question: "When and where will the competition take place?",
     answer:
-      "The competition date and audition venue are still to be confirmed. A 2025 Young People’s Concert took place at Marshall University, but that does not establish the next competition venue.",
-    status: "pending",
+      "Auditions are Sunday, January 10, 2027 at 12:30 p.m. in Smith Music Hall on the Marshall University campus. Soloist and accompanist must check in by 12:15 p.m.; late arrivals cannot audition.",
+    status: "verified-current",
   },
   {
     question: "Is there an entry fee?",
     answer:
-      "The fee and refund policy are not yet confirmed. They will be displayed beside the deadline before the application opens.",
-    status: "pending",
+      "Yes. Mail a $30 check payable to Young People’s Concert Committee with the application. Both must be received by December 14, 2026. The notice does not specify a refund policy.",
+    status: "verified-current",
   },
   {
-    question: "How will Zelle payment work?",
+    question: "How do I submit an application?",
     answer:
-      "If Zelle is approved, applicants will receive an application ID and will place that ID in the payment memo. Staff—not the website—will verify the transfer. The approved recipient will be published only after organizer confirmation.",
-    status: "provisional",
+      "Complete the application details and mail them with the $30 check to Judith Short, 121 Elwood Avenue, Huntington, WV 25705. There is no web submission or online payment on this site.",
+    status: "verified-current",
   },
   {
-    question: "How will I know my application is complete?",
+    question: "What if I need confirmation that my application arrived?",
     answer:
-      "The planned workflow uses two separate messages: first, application received; later, payment confirmed and application complete. Submitting a form or reporting that payment was sent will not count as staff verification.",
-    status: "provisional",
+      "The notice does not promise automatic confirmation. Contact chairperson Judith Short at 304-617-3367 or cathwayjcs@yahoo.com to ask about receipt.",
+    status: "verified-current",
   },
   {
     question: "Who are the judges?",
@@ -318,8 +304,8 @@ export const faqs: Faq[] = [
   {
     question: "What does the winner receive?",
     answer:
-      "Historical winners have performed as featured soloists with Marshall University ensembles. The next edition’s award, orchestra, repertoire approval, and performance commitment are awaiting confirmation.",
-    status: "verified-historical",
+      "The chosen applicant is offered a performance with the Marshall University Symphony Orchestra and a $300 award. Second- and third-place awards will also be given; their amounts are not stated. The winner must attend the March 1 rehearsal and March 2–3 performances.",
+    status: "verified-current",
   },
   {
     question: "What is the difference between the competition and the concert?",
@@ -330,8 +316,8 @@ export const faqs: Faq[] = [
   {
     question: "What consent is required for a minor?",
     answer:
-      "A future application is expected to require parent or guardian consent and a separate media preference. The final language and retention policy must be approved before minor data is collected.",
-    status: "provisional",
+      "The supplied application asks for a student’s contact, school, teacher, accompanist, and repertoire information but does not state a guardian-consent or media-release process. Ask the organizer before sending any sensitive additional information.",
+    status: "verified-current",
   },
   {
     question: "May photographs or videos be published?",

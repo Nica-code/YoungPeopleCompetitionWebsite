@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
   "Frequently asked questions",
-  "Find clear, honest answers about YPC eligibility, repertoire, dates, fees, Zelle, judging, awards, minors, and media consent.",
+  "Answers about 2027 eligibility, repertoire, dates, the mailed application, audition requirements, and awards.",
   "/faq",
 );
 
@@ -31,8 +31,8 @@ export default function FaqPage() {
       />
       <PageIntro
         eyebrow="FAQ"
-        title="Clear answers—even when the answer is “not confirmed yet.”"
-        intro="No outdated fee, rule, deadline, prize, or partner relationship is presented as current. This page will become the living applicant guide as decisions are approved."
+        title="Your questions, answered plainly."
+        intro="Find the 2027 audition details in one place. Where the supplied notice is silent—for example, about judges or refunds—we say so."
         current="FAQ"
       />
 
@@ -44,7 +44,7 @@ export default function FaqPage() {
             <div className="status-key">
               <div>
                 <StatusBadge status="verified-current" />
-                <p>Supported by a recent official source.</p>
+                <p>Stated in the supplied 2027 audition notice or confirmed by the organizer.</p>
               </div>
               <div>
                 <StatusBadge status="verified-historical" />

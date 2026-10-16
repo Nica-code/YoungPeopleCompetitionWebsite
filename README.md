@@ -2,7 +2,7 @@
 
 A source-conscious public website for Huntington, West Virginia’s Young People’s Competition and the wider Young People’s Concert tradition.
 
-The first release is intentionally static and privacy-preserving. It explains the program, documents verified history and winners, and marks all unconfirmed current-edition information as “To be confirmed.” It does not collect applicant or minor data.
+The site is static and privacy-preserving. It publishes the 2027 audition notice, including the organizer-corrected December 14, 2026 deadline and Sunday, January 10, 2027 audition, alongside documented history and winners. It does not collect applicant or minor data.
 
 ## Local development
 
@@ -14,6 +14,8 @@ pnpm dev
 ```
 
 The local Vinext preview is available at `http://localhost:3000`.
+
+The printable application at `/application-form/` mirrors the fields in the supplied 2027 notice. It is filled locally in the browser and printed; the site does not submit or store entries.
 
 Useful checks:
 
@@ -53,15 +55,13 @@ If the repository name or owner changes, update `siteUrl` and `repositoryName` i
 
 The public facts, winner records, FAQ answers, partner statuses, and research links live in `content/site.ts`.
 
-Before opening applications:
+The 2027 edition uses a mailed paper application and $30 check; there is no online submission or Zelle payment. Before changing those instructions:
 
-1. Replace every current-edition placeholder with organizer-approved information.
-2. Confirm eligibility, repertoire, memorization, accompaniment, audition format, judging, prizes, winner obligations, venue, deadlines, fee, refund policy, and accessibility arrangements.
-3. Confirm all named partner roles in writing.
-4. Approve the privacy notice, guardian consent, media release options, retention schedule, and deletion process before collecting minor data.
-5. If Zelle is used, publish only the verified recipient and exact memo format. Keep “application received,” “payment under review,” and “application complete” as separate statuses; website submission must never be treated as bank confirmation.
-6. Add new winners only with a public source or organizer-approved archival record.
-7. Run the checks above, proofread on desktop and mobile, and test the complete applicant journey with a non-production record.
+1. Confirm any changes to eligibility, repertoire, memorization, accompaniment, audition format, judging, prizes, dates, fee, and refund policy with the organizer.
+2. Confirm all named partner roles and contact details in writing.
+3. Approve a privacy notice, guardian consent, media release options, retention schedule, and deletion process before adding any online form for minors.
+4. Add new winners only with a public source or organizer-approved archival record.
+5. Run the checks above and proofread on desktop and mobile.
 
 See [docs/FOUNDATION.md](docs/FOUNDATION.md) for the research ledger, audience journeys, design system, architecture, data model, and launch risks.
 
@@ -70,7 +70,7 @@ See [docs/FOUNDATION.md](docs/FOUNDATION.md) for the research ledger, audience j
 - No invented dates, rules, prize amounts, eligibility limits, or contact details.
 - No public applicant list.
 - No unapproved photographs or names of minors.
-- No storage of bank credentials or automated claims that a Zelle payment cleared.
+- No website payment collection or claims that a mailed check has been received.
 - No exposure of private administrative notes or payment evidence.
 - Historical claims link to their source wherever practical.
 

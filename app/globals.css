@@ -2510,7 +2510,270 @@ button {
   }
 }
 
+.event-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.event-item {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 0.32fr) 1fr;
+  gap: 2rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.event-date strong,
+.event-date span {
+  display: block;
+}
+
+.event-date strong {
+  color: var(--oxblood);
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.event-date span,
+.event-index {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.event-date span {
+  margin-top: 0.5rem;
+}
+
+.event-item h3 {
+  margin: 0.3rem 0 0.5rem;
+}
+
+.event-item p {
+  max-width: 37rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.award-amount {
+  margin-bottom: 1.2rem;
+  color: var(--brass-light);
+  font-family: var(--display);
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 1;
+}
+
+.form-field-groups {
+  border-top: 1px solid var(--line);
+}
+
+.form-field-group {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-field-group > span {
+  color: var(--oxblood);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.form-field-group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form-field-group li {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+.mailing-card {
+  padding: clamp(2rem, 4vw, 3.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.mailing-card-label {
+  margin-bottom: 1.3rem;
+  color: var(--brass-light);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.mailing-card address {
+  margin-bottom: 2rem;
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-style: normal;
+  line-height: 1.25;
+}
+
+.mailing-card p:last-child {
+  margin-bottom: 0;
+}
+
+.mailing-card-light {
+  border-color: var(--line);
+  background: var(--paper);
+  color: var(--text);
+}
+
+.mailing-card-light .mailing-card-label {
+  color: var(--oxblood);
+}
+
+.mailing-card-light address {
+  color: var(--ink);
+}
+
+.contact-status-card h2 a {
+  overflow-wrap: anywhere;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.13em;
+}
+
+.printable-wrap {
+  max-width: 58rem;
+}
+
+.printable-instructions {
+  max-width: 43rem;
+  margin-bottom: 2rem;
+}
+
+.printable-form {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.printable-form-heading {
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.printable-form-heading h2 {
+  margin-bottom: 0.7rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.printable-form-heading p:last-child {
+  margin: 0;
+}
+
+.printable-fields {
+  display: grid;
+  padding: 1.8rem 0;
+  gap: 1.3rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.printable-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.printable-field-wide {
+  grid-column: 1 / -1;
+}
+
+.printable-field span {
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.printable-field input {
+  width: 100%;
+  min-height: 2.4rem;
+  padding: 0.25rem 0.45rem;
+  border: 0;
+  border-bottom: 1px solid var(--sage);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+}
+
+.printable-form-footer {
+  display: grid;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.printable-form-footer p,
+.printable-form-footer address {
+  margin: 0.4rem 0 0;
+  font-style: normal;
+}
+
+.printable-reminder {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 39rem) {
+  .event-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .printable-fields,
+  .printable-form-footer {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media print {
+  body:has(.printable-form) .page-intro,
+  body:has(.printable-form) .printable-instructions,
+  body:has(.printable-form) .printable-reminder {
+    display: none !important;
+  }
+
+  body:has(.printable-form) .section-first {
+    padding: 0 !important;
+  }
+
+  .printable-form {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .printable-fields {
+    gap: 0.8rem 1.5rem;
+  }
+
+  .printable-field input {
+    min-height: 1.8rem;
+  }
+
   .site-header,
   .site-footer,
   .final-cta,

@@ -41,14 +41,14 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="footer-partners">
-          <p className="footer-label">Documented & proposed partners</p>
+          <p className="footer-label">Organizations named in the 2027 notice</p>
           <ul>
             {partners.map((partner) => (
               <li key={partner.name}>{partner.name}</li>
             ))}
           </ul>
           <p className="footer-fine">
-            Current roles remain subject to organizer confirmation.
+            See the competition page for the event partnership details.
           </p>
         </div>
       </div>
