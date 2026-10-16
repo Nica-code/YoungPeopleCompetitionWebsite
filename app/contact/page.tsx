@@ -27,12 +27,10 @@ export default function ContactPage() {
             <a className="button button-accent" href="mailto:cathwayjcs@yahoo.com">Email Judith</a>
           </div>
           <div className="contact-status-card">
-            <p className="eyebrow">Call</p><h2><a href="tel:+13046173367">304-617-3367</a></h2>
+            <p className="eyebrow">By phone</p>
+            <h2>Let’s talk.</h2>
             <p>Ask about the 2027 audition or the required mailed application.</p>
-          </div>
-          <div className="contact-status-card">
-            <p className="eyebrow">Email</p><h2><a href="mailto:cathwayjcs@yahoo.com">cathwayjcs@yahoo.com</a></h2>
-            <p>For questions about the 2027 competition.</p>
+            <a className="button button-dark" href="tel:+13046173367">Call Judith</a>
           </div>
         </div>
       </section>

@@ -71,11 +71,20 @@ test("publishes the correct 2027 requirements and mailing route", async () => {
   assert.match(apply, /Young People(?:’|&#x27;)s Concert Committee/i);
   assert.match(apply, /121 Elwood Avenue/i);
   assert.match(contact, /cathwayjcs@yahoo\.com/i);
-  assert.match(contact, /304-617-3367/i);
+  assert.match(contact, /href="tel:\+13046173367"/i);
   assert.match(form, /2027 audition application/i);
   assert.match(form, /Teacher(?:’|&#x27;)s name/i);
   assert.match(form, /Nothing entered here is sent to or stored/i);
   assert.doesNotMatch(apply, /Zelle|application ID/i);
+});
+
+test("contact page offers email and call buttons without showing the contact details", async () => {
+  const contact = await page("contact/");
+
+  assert.match(contact, /href="mailto:cathwayjcs@yahoo\.com"[^>]*>Email Judith<\/a>/i);
+  assert.match(contact, /href="tel:\+13046173367"[^>]*>Call Judith<\/a>/i);
+  assert.doesNotMatch(contact, />cathwayjcs@yahoo\.com<\/a>/i);
+  assert.doesNotMatch(contact, />304-617-3367<\/a>/i);
 });
 
 test("offers a local print option and a downloadable blank application", async () => {

@@ -274,7 +274,7 @@ export const faqs: Faq[] = [
   {
     question: "What if I need confirmation that my application arrived?",
     answer:
-      "Contact Judith Short at 304-617-3367 or cathwayjcs@yahoo.com to confirm receipt.",
+      "Contact Judith Short through the Contact page to confirm receipt.",
     status: "verified-current",
   },
   {

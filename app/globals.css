@@ -1979,7 +1979,7 @@ button {
   display: grid;
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .contact-status-card {
@@ -2644,12 +2644,6 @@ button {
 
 .mailing-card-light address {
   color: var(--ink);
-}
-
-.contact-status-card h2 a {
-  overflow-wrap: anywhere;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.13em;
 }
 
 .printable-wrap {
