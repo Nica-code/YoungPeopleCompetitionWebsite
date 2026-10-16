@@ -73,6 +73,22 @@ test("publishes the correct 2027 requirements and mailing route", async () => {
   assert.doesNotMatch(apply, /Zelle|application ID/i);
 });
 
+test("offers a local print option and a downloadable blank application", async () => {
+  const [apply, form, pdf] = await Promise.all([
+    page("apply/"),
+    page("application-form/"),
+    readFile(new URL("2027-young-peoples-competition-application.pdf", siteRoot)),
+  ]);
+
+  assert.match(apply, /Fill out on this page, then print or save as PDF/i);
+  assert.match(form, /Print or save as PDF/i);
+  assert.match(form, /Download blank PDF/i);
+  assert.match(form, /href="\.\.\/2027-young-peoples-competition-application\.pdf"/i);
+  assert.match(form, /Nothing entered here is sent to or stored/i);
+  assert.ok(pdf.subarray(0, 5).equals(Buffer.from("%PDF-")));
+  assert.match(pdf.toString("latin1"), /%%EOF\s*$/);
+});
+
 test("publishes a simple winners list and applicant safeguards", async () => {
   const [winners, privacy, accessibility] = await Promise.all([
     page("winners/"),

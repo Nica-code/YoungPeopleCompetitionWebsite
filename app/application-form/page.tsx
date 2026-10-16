@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
+import { PrintApplicationButton } from "@/components/PrintApplicationButton";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
@@ -32,17 +33,24 @@ export default function ApplicationFormPage() {
     <>
       <PageIntro
         eyebrow="Printable application"
-        title="The information you need, ready for paper."
-        intro="Type into the fields below, then use your browser’s Print command to print or save as a PDF. Nothing entered here is sent to or stored by this website."
+        title="Complete your application."
+        intro="Type into the fields below, then print the completed form or save a PDF copy. Nothing entered here is sent to or stored by this website."
         current="Application form"
       >
         <Link className="text-link" href="/apply">Review mailing instructions <span aria-hidden="true">→</span></Link>
       </PageIntro>
       <section className="section section-paper section-first">
         <div className="container printable-wrap">
-          <div className="printable-instructions">
-            <p className="eyebrow">Before you print</p>
-            <p>Check every entry, then print the page and mail it with your $30 check. Contact Judith Short if you have questions.</p>
+          <div className="printable-actions">
+            <div>
+              <p className="eyebrow">Your application</p>
+              <h2>Fill out on this page, then print or save as PDF.</h2>
+              <p>Check your entries before printing. Your information stays in this browser; it is not submitted online.</p>
+            </div>
+            <div className="printable-action-buttons">
+              <PrintApplicationButton />
+              <a className="text-link" href="../2027-young-peoples-competition-application.pdf" download>Download blank PDF <span aria-hidden="true">↓</span></a>
+            </div>
           </div>
           <div className="printable-form" aria-label="2027 Young People’s Competition paper application">
             <div className="printable-form-heading">
@@ -63,7 +71,7 @@ export default function ApplicationFormPage() {
               <div><strong>Mail to</strong><address>Judith Short<br />121 Elwood Avenue<br />Huntington, WV 25705</address></div>
             </div>
           </div>
-          <p className="printable-reminder">Use Print (Ctrl+P on Windows, Command+P on Mac) to print or save this form. This website does not accept electronic applications.</p>
+          <p className="printable-reminder">Print the completed form and mail it with your $30 check. If you save a PDF first, you will still need to print and mail it. This website does not accept electronic applications.</p>
         </div>
       </section>
     </>
