@@ -169,6 +169,11 @@ export const winners: Winner[] = [
     instrument: "Violin",
   },
   {
+    year: 2024,
+    name: "Liam Toney",
+    instrument: "Violin",
+  },
+  {
     year: 2023,
     name: "Isaiah Biele",
     instrument: "Violin",

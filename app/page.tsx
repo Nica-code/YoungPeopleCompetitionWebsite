@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Partnership } from "@/components/Partnership";
 import { currentEdition, displayFact, siteConfig, winners } from "@/content/site";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -58,6 +59,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Partnership />
 
       <section className="section section-ivory home-winner" aria-labelledby="home-winner-title">
         <div className="container home-winner-inner">

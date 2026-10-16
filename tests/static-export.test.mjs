@@ -103,6 +103,7 @@ test("publishes a simple winners list and applicant safeguards", async () => {
 
   for (const winner of [
     "Harin Lee",
+    "Liam Toney",
     "Isaiah Biele",
     "Armâan Karimpour",
     "Haleigh Frail",
@@ -114,10 +115,31 @@ test("publishes a simple winners list and applicant safeguards", async () => {
   }
 
   assert.doesNotMatch(winners, /Award|Orchestra|Portrait pending|View source|archive checklist/i);
+  assert.match(winners, /2024/);
   assert.doesNotMatch(winners, /Raleigh Frail/i);
   assert.match(privacy, /minor/i);
   assert.match(privacy, /\$30 check/i);
   assert.match(accessibility, /WCAG 2\.2 AA/i);
+});
+
+test("shows the side-by-side partnership and organization identities", async () => {
+  const [home, competition] = await Promise.all([page(""), page("competition/")]);
+
+  for (const html of [home, competition]) {
+    assert.match(html, /professional (?:HSO|Huntington Symphony Orchestra) musicians/i);
+    assert.match(html, /School of Music logo/i);
+    assert.match(html, /Huntington Symphony Orchestra logo/i);
+    assert.match(html, /The Woman(?:’|&#x27;)s Club of Huntington/i);
+    assert.match(html, /Cabell County Schools logo/i);
+  }
+
+  for (const asset of [
+    "partners/marshall-school-of-music.png",
+    "partners/huntington-symphony.png",
+    "partners/cabell-county-schools.png",
+  ]) {
+    await access(new URL(asset, siteRoot));
+  }
 });
 
 test("omits internal-process language from public pages", async () => {

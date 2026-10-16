@@ -2993,7 +2993,118 @@ button {
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
+.partnership-section {
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  background: var(--ink-deep);
+  color: var(--paper);
+}
+
+.partnership-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.partnership-intro h2 {
+  max-width: 34rem;
+  margin-bottom: 0;
+  color: var(--paper);
+  font-size: clamp(2.3rem, 4.5vw, 4.1rem);
+}
+
+.partnership-intro > p {
+  max-width: 42rem;
+  margin-bottom: 0;
+  color: #e0e9e3;
+  font-size: 1.08rem;
+}
+
+.partnership-organizations {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  background: #cec6b9;
+}
+
+.partnership-organization {
+  display: flex;
+  min-width: 0;
+  min-height: 11rem;
+  padding: 1.4rem;
+  background: var(--white);
+  color: var(--ink);
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.partnership-role {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.partnership-organization a {
+  display: flex;
+  min-height: 5.25rem;
+  align-items: center;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.partnership-organization a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.partnership-organization img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.partnership-organization .partnership-marshall {
+  width: min(100%, 15rem);
+}
+
+.partnership-organization .partnership-cabell {
+  width: 5.75rem;
+}
+
+.partnership-presenter strong {
+  max-width: 15rem;
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.partnership-organization .partnership-hso {
+  gap: 0.85rem;
+}
+
+.partnership-hso img {
+  width: 3.5rem;
+  flex: 0 0 auto;
+}
+
+.partnership-hso strong {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
 @media (max-width: 56rem) {
+  .partnership-intro { grid-template-columns: 1fr; gap: 1.25rem; }
+  .partnership-organizations { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-hero-refined { min-height: 0; }
   .home-hero-refined .edition-panel { max-width: none; }
   .home-essentials-grid { grid-template-columns: 1fr; }
@@ -3007,6 +3118,8 @@ button {
 }
 
 @media (max-width: 39rem) {
+  .partnership-organizations { grid-template-columns: 1fr; }
+  .partnership-organization { min-height: 8.5rem; }
   .winners-list-heading { display: none; }
   .winners-simple-list li { grid-template-columns: 4.5rem 1fr; gap: 0.2rem 1rem; }
   .winners-simple-list li > span:last-child { grid-column: 2; }

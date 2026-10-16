@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
+import { Partnership } from "@/components/Partnership";
 import { currentEdition, displayFact } from "@/content/site";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -51,6 +52,8 @@ export default function CompetitionPage() {
           </div>
         </div>
       </section>
+
+      <Partnership />
 
       <section className="section section-ivory" aria-labelledby="requirements-heading">
         <div className="container content-split">
