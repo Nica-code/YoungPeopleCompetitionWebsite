@@ -121,28 +121,27 @@ test("offers a local print option and a downloadable blank application", async (
   assert.match(pdf.toString("latin1"), /%%EOF\s*$/);
 });
 
-test("publishes a simple winners list and applicant safeguards", async () => {
+test("publishes four recent winners and applicant safeguards", async () => {
   const [winners, privacy, accessibility] = await Promise.all([
     page("winners/"),
     page("privacy/"),
     page("accessibility/"),
   ]);
 
-  for (const winner of [
-    "Harin Lee",
-    "Liam Toney",
-    "Isaiah Biele",
-    "Armâan Karimpour",
-    "Haleigh Frail",
-    "Olivia Hay",
-    "Erica Shen",
-    "Sesil Dikener",
+  for (const [year, name, instrument] of [
+    [2026, "Harin Lee", "Violin"],
+    [2025, "Liam Toney", "Violin"],
+    [2024, "Soleil Gloss", "Piano"],
+    [2023, "Isaiah Biele", "Violin"],
   ]) {
-    assert.match(winners, new RegExp(winner));
+    assert.match(winners, new RegExp(`<li[^>]*>[^<]*<span[^>]*>${year}<\\/span>[^<]*<strong>${name}<\\/strong>[^<]*<span>${instrument}<\\/span>[^<]*<\\/li>`, "i"));
   }
 
+  assert.match(winners, /Recent winners/i);
+  for (const olderWinner of ["Armâan Karimpour", "Haleigh Frail", "Olivia Hay", "Erica Shen", "Sesil Dikener"]) {
+    assert.doesNotMatch(winners, new RegExp(olderWinner));
+  }
   assert.doesNotMatch(winners, /Award|Orchestra|Portrait pending|View source|archive checklist/i);
-  assert.match(winners, /2024/);
   assert.doesNotMatch(winners, /Raleigh Frail/i);
   assert.match(privacy, /minor/i);
   assert.match(privacy, /\$30 check/i);

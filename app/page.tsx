@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Partnership } from "@/components/Partnership";
-import { currentEdition, displayFact, siteConfig, winners } from "@/content/site";
+import { currentEdition, displayFact, recentWinners, siteConfig } from "@/content/site";
 import { pageMetadata } from "@/lib/metadata";
 
 const homeMetadata = pageMetadata(
@@ -64,8 +64,8 @@ export default function Home() {
 
       <section className="section section-ivory home-winner" aria-labelledby="home-winner-title">
         <div className="container home-winner-inner">
-          <div><p className="eyebrow">Past winners</p><h2 id="home-winner-title">Meet the musicians.</h2><p>Discover young performers recognized by the competition through the years.</p></div>
-          <div className="home-winner-highlight"><span>{winners[0].year}</span><strong>{winners[0].name}</strong><span>{winners[0].instrument}</span><Link className="text-link" href="/winners">See past winners <span aria-hidden="true">→</span></Link></div>
+          <div><p className="eyebrow">Recent winners</p><h2 id="home-winner-title">Meet the musicians.</h2><p>Discover young performers recognized by the competition in recent years.</p></div>
+          <div className="home-winner-highlight"><span>{recentWinners[0].year}</span><strong>{recentWinners[0].name}</strong><span>{recentWinners[0].instrument}</span><Link className="text-link" href="/winners">See recent winners <span aria-hidden="true">→</span></Link></div>
         </div>
       </section>
 

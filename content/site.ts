@@ -162,16 +162,21 @@ export const historyMilestones = [
   },
 ] as const;
 
-export const winners: Winner[] = [
+export const recentWinners: Winner[] = [
   {
     year: 2026,
     name: "Harin Lee",
     instrument: "Violin",
   },
   {
-    year: 2024,
+    year: 2025,
     name: "Liam Toney",
     instrument: "Violin",
+  },
+  {
+    year: 2024,
+    name: "Soleil Gloss",
+    instrument: "Piano",
   },
   {
     year: 2023,
@@ -180,6 +185,10 @@ export const winners: Winner[] = [
     sourceUrl:
       "https://www.marshall.edu/board/files/April-26-2023-Board-of-Governors-Regular-Meeting_agenda.pdf",
   },
+];
+
+// Retained for the full winners archive when the organizer supplies the complete list.
+export const additionalKnownWinners: Winner[] = [
   {
     year: 2018,
     name: "Armâan Karimpour",

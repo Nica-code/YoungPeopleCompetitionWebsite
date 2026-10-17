@@ -31,7 +31,7 @@ export default function TermsPage() {
 
             <h2>Historical information</h2>
             <p>
-              The past-winners list includes musicians identified in public
+              The recent-winners list includes musicians identified in public
               concert records and information supplied by the organizer.
             </p>
 

@@ -2,7 +2,7 @@
 
 A source-conscious public website for Huntington, West Virginia’s Young People’s Competition and the wider Young People’s Concert tradition.
 
-The site is static and privacy-preserving. It publishes the 2027 audition notice, including the organizer-corrected December 14, 2026 deadline and Sunday, January 10, 2027 audition, alongside documented history and winners. It does not collect applicant or minor data.
+The site is static and privacy-preserving. It publishes the 2027 audition notice, including the organizer-corrected December 14, 2026 deadline and Sunday, January 10, 2027 audition, alongside documented history and recent winners. It does not collect applicant or minor data.
 
 ## Local development
 
@@ -60,7 +60,7 @@ The 2027 edition uses a mailed paper application and $30 check; there is no onli
 1. Confirm any changes to eligibility, repertoire, memorization, accompaniment, audition format, judging, prizes, dates, fee, and refund policy with the organizer.
 2. Confirm all named partner roles and contact details in writing.
 3. Approve a privacy notice, guardian consent, media release options, retention schedule, and deletion process before adding any online form for minors.
-4. Add new winners only with a public source or organizer-approved archival record.
+4. The public winners page shows 2023–2026. Earlier known winners remain in `content/site.ts` for the future complete archive. Add new winners only with a public source or organizer-approved archival record.
 5. Run the checks above and proofread on desktop and mobile.
 
 See [docs/FOUNDATION.md](docs/FOUNDATION.md) for the research ledger, audience journeys, design system, architecture, data model, and launch risks.
