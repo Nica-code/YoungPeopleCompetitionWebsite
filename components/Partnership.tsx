@@ -1,4 +1,4 @@
-const assetBase = process.env.GITHUB_PAGES === "true" ? "/YoungPeopleCompetitionWebsite" : "";
+import { assetBase } from "@/lib/paths";
 
 export function Partnership() {
   return (

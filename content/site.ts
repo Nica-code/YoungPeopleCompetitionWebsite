@@ -1,3 +1,5 @@
+import { assetBase } from "@/lib/paths";
+
 export type ConfirmationStatus =
   | "verified-current"
   | "verified-historical"
@@ -30,7 +32,7 @@ export const siteConfig = {
   location: "Huntington, West Virginia",
   description:
     "A regional music competition connected to Huntington’s long-running Young People’s Concert tradition.",
-  siteUrl: "https://nica-code.github.io/YoungPeopleCompetitionWebsite/",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nica-code.github.io/YoungPeopleCompetitionWebsite/",
   repositoryName: "YoungPeopleCompetitionWebsite",
   researchUpdated: "October 15, 2026",
   publicContactEmail: "cathwayjcs@yahoo.com",
@@ -356,10 +358,7 @@ export function statusLabel(status: ConfirmationStatus) {
   }
 }
 
-export const basePath =
-  process.env.GITHUB_PAGES === "true"
-    ? `/${siteConfig.repositoryName}`
-    : "";
+export const basePath = assetBase;
 
 export function assetPath(path: string) {
   return `${basePath}${path}`;

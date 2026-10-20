@@ -51,6 +51,28 @@ The expected project URL is:
 
 If the repository name or owner changes, update `siteUrl` and `repositoryName` in `content/site.ts`, plus `repositoryName` in `next.config.ts`.
 
+### Custom domain: youngpeoplescompetition.com
+
+The deployment reads GitHub Pages' configured base URL and path automatically. A custom domain uses `/` instead of `/YoungPeopleCompetitionWebsite/` for application links, images, and downloads; canonical URLs, the sitemap, and robots.txt follow the configured public URL.
+
+1. Recommended: verify domain ownership under GitHub account **Settings → Pages** using its TXT record.
+2. In this repository's **Settings → Pages**, set **Custom domain** to `youngpeoplescompetition.com`. Keep **Source: GitHub Actions**.
+3. Run **Actions → Deploy YPC to GitHub Pages → Run workflow** after changing the domain so the export picks up the new URL.
+4. In Namecheap **Domain List → Manage → Advanced DNS**, replace conflicting `@`/`www` parking or redirect records with four `@` A records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`. Set `www` CNAME to `nica-code.github.io`. Leave email/MX records untouched.
+5. Once DNS and the certificate are ready, enable **Enforce HTTPS** in GitHub Pages. DNS and certificate changes can take up to 24 hours.
+
+GitHub Actions publishing uses the repository's Pages setting, not a `CNAME` file, to configure the domain. Until that setting changes, the existing github.io site keeps its current paths.
+
+To test a custom-domain export locally in PowerShell:
+
+```powershell
+$env:GITHUB_PAGES = "true"
+$env:PAGES_BASE_PATH = ""
+$env:PAGES_SITE_URL = "https://youngpeoplescompetition.com"
+pnpm build:pages
+pnpm test
+```
+
 ## Updating an edition
 
 The public facts, winner records, FAQ answers, partner statuses, and research links live in `content/site.ts`.

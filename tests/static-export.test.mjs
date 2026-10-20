@@ -28,9 +28,10 @@ test("client-rendered assets retain the configured hosting base without server e
   const configSource = await readFile(new URL("../next.config.ts", import.meta.url), "utf8");
   const pathsSource = await readFile(new URL("../lib/paths.ts", import.meta.url), "utf8");
   const compile = (source) => ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText;
-  for (const [pages, expected] of [["true", "/YoungPeopleCompetitionWebsite"], [undefined, ""]]) {
-    const config = { exports: {}, process: { env: { GITHUB_PAGES: pages } } };
+  for (const [pages, hostingPath, expected] of [["true", undefined, "/YoungPeopleCompetitionWebsite"], ["true", "", ""], ["true", "/YoungPeopleCompetitionWebsite", "/YoungPeopleCompetitionWebsite"], [undefined, undefined, ""]]) {
+    const config = { exports: {}, process: { env: { GITHUB_PAGES: pages, PAGES_BASE_PATH: hostingPath } } };
     runInNewContext(compile(configSource), config);
+    assert.equal(config.exports.default.basePath, expected);
     // Only explicitly exposed build-time values reach the browser bundle.
     const browser = { exports: {}, process: { env: config.exports.default.env ?? {} } };
     runInNewContext(compile(pathsSource), browser);
@@ -47,6 +48,23 @@ test("homepage section destinations can receive keyboard and screen-reader focus
     assert.ok(section);
     assert.match(section, /tabindex="-1"/i);
     assert.match(section, /aria-labelledby=/);
+  }
+});
+
+test("custom-domain exports use root-relative assets and the correct public URLs", { skip: !process.env.PAGES_SITE_URL }, async () => {
+  const expected = `${process.env.PAGES_SITE_URL.replace(/\/$/, "")}/`;
+  const home = await page("");
+  assert.ok(home.includes(`<link rel="canonical" href="${expected}"`));
+  const sitemap = await readFile(new URL("sitemap.xml", siteRoot), "utf8");
+  assert.ok(sitemap.includes(`<loc>${expected}apply/</loc>`));
+  const robots = await readFile(new URL("robots.txt", siteRoot), "utf8");
+  assert.ok(robots.includes(`Sitemap: ${expected}sitemap.xml`));
+  if (process.env.PAGES_BASE_PATH === "") {
+    for (const html of await Promise.all(routes.map(page))) {
+      assert.doesNotMatch(html, /(?:src|href)="\/YoungPeopleCompetitionWebsite\//);
+    }
+    assert.match(home, /src="\/partners\/marshall-school-of-music\.png"/);
+    assert.match(await page("apply/"), /href="\/2027-young-peoples-competition-application\.pdf"/);
   }
 });
 

@@ -36,15 +36,22 @@ jobs:
           cache: pnpm
 
       - name: Configure GitHub Pages
+        id: pages
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Build static export
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          PAGES_SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: pnpm build:pages
 
       - name: Test static export
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          PAGES_SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: pnpm test
 
       - name: Upload Pages artifact
