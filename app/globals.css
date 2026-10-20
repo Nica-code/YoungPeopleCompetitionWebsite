@@ -159,6 +159,9 @@ address { font-style: normal; }
 .footer-inner nav { display: flex; align-items: center; gap: 1.2rem; }
 .footer-inner a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; }
 .footer-inner a:hover { text-decoration: underline; }
+.footer-credit { white-space: nowrap; }
+.footer-credit a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em; }
+.footer-credit a:hover { text-decoration-color: currentColor; }
 
 /* Supporting information uses the same restrained design language. */
 .page-intro { padding-block: 2rem 2.5rem; border-bottom: 1px solid var(--line); }

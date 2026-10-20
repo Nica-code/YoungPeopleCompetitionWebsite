@@ -260,3 +260,13 @@ test("omits internal-process language from public pages", async () => {
     assert.doesNotMatch(html, /Current source|Provisional|Confirmation needed|The first build|refund policy|organizer-decision checklist|Recommended naming|brand architecture|verified archive|source document/i);
   }
 });
+
+test("every page includes a linked designer credit within the footer", async () => {
+  for (const route of routes) {
+    const html = await page(route);
+    const footer = html.match(/<footer\b[\s\S]*?<\/footer>/)?.[0];
+    assert.ok(footer, `Missing footer on ${route || "homepage"}`);
+    assert.match(footer, /Designed by <a href="https:\/\/alexmalaimare\.com\/">Alex Malaimare<\/a>/);
+    assert.equal((footer.match(/Alex Malaimare/g) ?? []).length, 1);
+  }
+});
