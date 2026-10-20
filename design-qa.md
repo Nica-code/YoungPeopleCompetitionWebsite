@@ -1,4 +1,20 @@
-# Application-first redesign QA
+# Website layout QA
+
+## Current update: presentation homepage and dedicated application
+
+The user requested the application be moved off the homepage. The homepage now presents the competition, key dates, prizes, partners, recent past winners, and contact actions. Every Apply action leads to `/apply/`, which immediately shows all 15 application fields. `/application-form/` remains a working alias for the dedicated application.
+
+The warm-white and burgundy design, official logos (including Cabell County Schools), and full mobile wordmark remain in use. The application now has a proper page-level heading and the print layout hides its two contextual navigation links.
+
+Current evidence is saved in `outputs/home-application-split/`: `home-desktop.png`, `application-desktop.png`, `home-mobile.png`, and `application-mobile.png`. The browser-rendered phone views use a 390 × 844 CSS-pixel frame at 1:1 scale. Their measured document widths are 375px (15px reserved for the scrollbar), with no horizontal overflow. The full wordmark displays on both pages. The homepage has zero inputs and the application has all 15.
+
+Browser navigation from the homepage's Apply button to the dedicated form was verified. No extra instructions gateway appears. The standalone browser console showed no application errors. All 10 static-export regression checks passed, including the new page-separation check, and the Next.js build and type check passed. The unchanged print fields and PDF download remain covered by regression checks; only the page container and print-hidden contextual navigation changed.
+
+Current findings: no actionable layout, navigation, or content issues remain. The temporary phone-review wrapper was removed before packaging.
+
+Current final result: passed
+
+## Previous approved visual-design review
 
 Date: October 19, 2026.
 

@@ -45,7 +45,7 @@ export default function ContactPage() {
             <p className="mailing-card-label">Mail to</p>
             <address>Judith Short<br />121 Elwood Avenue<br />Huntington, WV 25705</address>
             <p>Make checks payable to Young People’s Concert Committee.</p>
-            <Link className="text-link" href="/#application">Complete your application <span aria-hidden="true">→</span></Link>
+            <Link className="text-link" href="/apply">Complete your application <span aria-hidden="true">→</span></Link>
           </div>
         </div>
       </section>

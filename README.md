@@ -15,7 +15,7 @@ pnpm dev
 
 The local Vinext preview is available at `http://localhost:3000`.
 
-The homepage includes the complete printable application at `/#application`. Apply links go directly to its fields. The older `/apply/` and `/application-form/` addresses also show the complete application so existing links keep working. It mirrors the fields in the supplied 2027 notice, is filled locally in the browser and printed, and does not submit or store entries.
+The homepage presents the competition, dates, prizes, partners, and recent past winners. Every Apply button opens the complete printable application directly at `/apply/`. The older `/application-form/` address also shows this dedicated application so existing links keep working. It mirrors the fields in the supplied 2027 notice, is filled locally in the browser and printed, and does not submit or store entries.
 
 Useful checks:
 

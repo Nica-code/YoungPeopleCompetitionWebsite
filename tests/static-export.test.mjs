@@ -148,11 +148,14 @@ test("publishes four recent winners and applicant safeguards", async () => {
   assert.match(accessibility, /WCAG 2\.2 AA/i);
 });
 
-test("Apply leads directly to the full local application without an instructions gateway", async () => {
-  for (const route of ["", "apply/", "application-form/"]) {
+test("the homepage presents the competition and Apply opens a dedicated application", async () => {
+  const home = await page("");
+  assert.doesNotMatch(home, /<input\b|role="form"|id="application"/i);
+  assert.match(home, /href="(?:\/YoungPeopleCompetitionWebsite)?\/apply\/"/);
+  for (const route of ["apply/", "application-form/"]) {
     const html = await page(route);
     assert.match(html, /id="application"/);
-    assert.match(html, /href="(?:(?:\/YoungPeopleCompetitionWebsite)?\/)?#application"/);
+    assert.match(html, /href="(?:\/YoungPeopleCompetitionWebsite)?\/apply\/"/);
     const application = html.match(/<section\b[^>]*id="application"[\s\S]*?<\/section>/i)?.[0];
     assert.ok(application, `Missing application on ${route || "homepage"}`);
     const fields = [...application.matchAll(/<input\b[^>]*name="([^"]+)"/g)].map((match) => match[1]);

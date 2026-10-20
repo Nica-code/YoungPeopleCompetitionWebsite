@@ -29,7 +29,7 @@ const sections = [
 export function ApplicationForm() {
   return (
     <section className="entry-application" id="application" aria-labelledby="application-title">
-      <header className="application-intro"><p className="eyebrow">2027 audition application</p><h2 id="application-title" tabIndex={-1}>Apply for 2027</h2><p>Complete, print, and mail with a $30 check by <strong>December 14, 2026.</strong></p></header>
+      <header className="application-intro"><p className="eyebrow">2027 audition application</p><h1 id="application-title">Apply for 2027</h1><p>Complete, print, and mail with a $30 check by <strong>December 14, 2026.</strong></p></header>
       <div className="printable-form application-form" role="form" aria-label="2027 Young People’s Competition paper application">
         <div className="application-print-heading"><p>66th Annual Young People’s Concert</p><h1>2027 audition application</h1><p>Ages 12–18 · Tri-State Area · Received by December 14, 2026</p></div>
         {sections.map((section, index) => (
