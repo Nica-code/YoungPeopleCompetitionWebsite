@@ -195,11 +195,11 @@ address { font-style: normal; }
 .event-index { display: none; }
 .event-item h3 { font-size: 1.65rem; margin-bottom: .4rem; }
 .event-item p { font-size: .85rem; margin: 0; }
-.award-amount { font: 500 4rem/1 var(--display); margin-bottom: 1rem; }
+.award-amount { margin-bottom: 1rem; }
 .checklist-panel p { font-size: .92rem; }
 .additional-prizes { display: flex; gap: 3rem; border-top: 1px solid #a87787; padding-top: 1.5rem; margin-block: 1.5rem; }
 .additional-prizes > div { display: flex; flex-direction: column; gap: .3rem; }
-.additional-prizes strong { font: 500 2.4rem/1 var(--display); }
+.checklist-panel .award-amount, .additional-prizes strong { font: 500 2.4rem/1 var(--display); }
 .additional-prizes span { font-size: .8rem; }
 .compact-cta { border-block: 1px solid var(--line); padding-block: 2rem; }
 .compact-cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
@@ -254,6 +254,7 @@ address { font-style: normal; }
 .presentation-layout { display: grid; grid-template-columns: .95fr 1.05fr; column-gap: 4rem; row-gap: 2.5rem; padding-block: 3rem 2.75rem; }
 .presentation-heading { container-type: inline-size; border-right: 1px solid var(--line); padding-right: 3rem; }
 .presentation-heading .entry-title { margin-bottom: 0; }
+.presentation-location { margin: 1.25rem 0 0; font: 400 clamp(.95rem, 1.3vw, 1.15rem)/1.5 var(--sans); letter-spacing: .025em; color: var(--muted); }
 .presentation-intro { align-self: center; }
 .presentation-intro h2 { font-size: clamp(2.75rem, 4.3vw, 4rem); max-width: 15ch; margin-bottom: 1.2rem; }
 .presentation-intro > p:not(.eyebrow) { font-size: 1.2rem; line-height: 1.6; max-width: 42ch; }

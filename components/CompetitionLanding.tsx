@@ -8,11 +8,10 @@ export function CompetitionLanding() {
     <>
       <div className="container presentation-layout">
         <section className="presentation-heading" aria-labelledby="competition-title">
-          <p className="eyebrow">Huntington, West Virginia</p>
           <h1 className="entry-title" id="competition-title"><span>Young</span><span>People’s</span><span>Competition</span><span className="entry-year">2027</span></h1>
+          <p className="presentation-location">Huntington, West Virginia</p>
         </section>
         <section className="presentation-intro" aria-labelledby="opportunity-title">
-          <p className="eyebrow">2027 Young People’s Competition</p>
           <h2 id="opportunity-title">Your moment with the orchestra.</h2>
           <p>An opportunity for young musicians to perform as a soloist and compete for prizes. The winner performs with the Marshall University Symphony Orchestra, joined by members of the Huntington Symphony Orchestra.</p>
           <div className="presentation-actions"><Link className="button button-accent" href="/apply">Apply for 2027<Icon name="arrow-right" /></Link><Link className="text-link" href="/competition">Competition details & requirements</Link></div>

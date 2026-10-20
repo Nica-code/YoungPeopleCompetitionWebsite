@@ -243,6 +243,17 @@ test("homepage partners appear presenter-first without dropping existing logos",
   }
 });
 
+test("homepage puts the location below its title and omits the redundant introduction label", async () => {
+  const home = await page("");
+  const heading = home.match(/<section class="presentation-heading"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(heading);
+  assert.match(heading, /<\/h1><p class="presentation-location">Huntington, West Virginia<\/p>/);
+  const introduction = home.match(/<section class="presentation-intro"[\s\S]*?<\/section>/)?.[0];
+  assert.ok(introduction);
+  assert.doesNotMatch(introduction, /class="eyebrow"/);
+  assert.match(introduction, /Your moment with the orchestra/);
+});
+
 test("omits internal-process language from public pages", async () => {
   const pages = await Promise.all(routes.map(page));
   for (const html of pages) {
