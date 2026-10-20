@@ -28,8 +28,8 @@ export function CompetitionLanding() {
         </section>
       </div>
       <div className="landing-bottom container">
-        <section className="recent-winners" id="recent-past-winners" aria-labelledby="recent-winners-title"><h2 id="recent-winners-title">Recent past winners</h2><ol className="recent-winners-list">{recentWinners.map((winner) => <li key={`${winner.year}-${winner.name}`}><span>{winner.year}</span><strong>{winner.name}</strong><span>{winner.instrument}</span></li>)}</ol></section>
-        <section className="landing-contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Questions?</h2><p>Contact chairperson Judith Short.</p><div className="contact-button-row"><a className="button button-outline" href={`mailto:${siteConfig.publicContactEmail}`}><Icon name="envelope-simple" />Email Judith</a><a className="button button-outline" href="tel:+13046173367"><Icon name="phone" />Call Judith</a></div></section>
+        <section className="recent-winners" id="recent-past-winners" tabIndex={-1} aria-labelledby="recent-winners-title"><h2 id="recent-winners-title">Recent past winners</h2><ol className="recent-winners-list">{recentWinners.map((winner) => <li key={`${winner.year}-${winner.name}`}><span>{winner.year}</span><strong>{winner.name}</strong><span>{winner.instrument}</span></li>)}</ol></section>
+        <section className="landing-contact" id="contact" tabIndex={-1} aria-labelledby="contact-title"><h2 id="contact-title">Questions?</h2><p>Contact chairperson Judith Short.</p><div className="contact-button-row"><a className="button button-outline" href={`mailto:${siteConfig.publicContactEmail}`}><Icon name="envelope-simple" />Email Judith</a><a className="button button-outline" href="tel:+13046173367"><Icon name="phone" />Call Judith</a></div></section>
       </div>
     </>
   );

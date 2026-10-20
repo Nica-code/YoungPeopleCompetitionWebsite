@@ -135,6 +135,12 @@ address { font-style: normal; }
 
 /* The winners and contact stay on the same short application journey. */
 .landing-bottom { display: grid; grid-template-columns: 1fr auto; gap: 2rem; border-top: 1px solid var(--line); padding-block: 1.65rem 2rem; }
+.landing-bottom > section[data-section-active] {
+  background: #f8f0f3;
+  box-shadow: 0 0 0 .75rem #f8f0f3, 0 0 0 calc(.75rem + 1px) #d6b9c4;
+  border-radius: .15rem;
+}
+.primary-navigation a[aria-current="location"] { color: var(--ink); text-decoration: underline; text-underline-offset: .35em; text-decoration-thickness: 2px; }
 .recent-winners h2, .landing-contact h2 { font-size: 2rem; margin-bottom: .85rem; }
 .recent-winners-list { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); margin: 0; padding: 0; list-style: none; }
 .recent-winners-list li { display: flex; flex-direction: column; gap: .15rem; padding: 0 1.2rem; border-left: 1px solid var(--line); font-size: .78rem; }

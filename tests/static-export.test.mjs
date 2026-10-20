@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
+import ts from "typescript";
+import { runInNewContext } from "node:vm";
 
 const siteRoot = new URL("../out/", import.meta.url);
 
@@ -21,6 +23,32 @@ const routes = [
 async function page(route) {
   return readFile(new URL(`${route}index.html`, siteRoot), "utf8");
 }
+
+test("client-rendered assets retain the configured hosting base without server environment variables", async () => {
+  const configSource = await readFile(new URL("../next.config.ts", import.meta.url), "utf8");
+  const pathsSource = await readFile(new URL("../lib/paths.ts", import.meta.url), "utf8");
+  const compile = (source) => ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText;
+  for (const [pages, expected] of [["true", "/YoungPeopleCompetitionWebsite"], [undefined, ""]]) {
+    const config = { exports: {}, process: { env: { GITHUB_PAGES: pages } } };
+    runInNewContext(compile(configSource), config);
+    // Only explicitly exposed build-time values reach the browser bundle.
+    const browser = { exports: {}, process: { env: config.exports.default.env ?? {} } };
+    runInNewContext(compile(pathsSource), browser);
+    assert.equal(browser.exports.assetBase, expected);
+    assert.equal(`${browser.exports.assetBase}/icons/x.svg`, `${expected}/icons/x.svg`);
+    assert.equal(browser.exports.applicationPdf, `${expected}/2027-young-peoples-competition-application.pdf`);
+  }
+});
+
+test("homepage section destinations can receive keyboard and screen-reader focus", async () => {
+  const home = await page("");
+  for (const id of ["recent-past-winners", "contact"]) {
+    const section = home.match(new RegExp(`<section[^>]*id="${id}"[^>]*>`))?.[0];
+    assert.ok(section);
+    assert.match(section, /tabindex="-1"/i);
+    assert.match(section, /aria-labelledby=/);
+  }
+});
 
 test("exports every public route", async () => {
   await Promise.all(
