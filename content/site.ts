@@ -37,11 +37,9 @@ export const siteConfig = {
 };
 
 export const navigation = [
-  { href: "/", label: "Home" },
   { href: "/competition", label: "Competition" },
-  { href: "/winners", label: "Winners" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#recent-past-winners", label: "Recent past winners" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
 
 export const currentEdition = {

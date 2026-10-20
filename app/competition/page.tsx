@@ -109,8 +109,8 @@ export default function CompetitionPage() {
 
       <section className="compact-cta">
         <div className="container compact-cta-inner">
-          <div><p className="eyebrow eyebrow-light">Ready to enter?</p><h2>Review the mailing checklist before December 14.</h2></div>
-          <Link className="button button-accent" href="/apply">How to apply</Link>
+          <div><p className="eyebrow eyebrow-light">Ready to enter?</p><h2>Apply by December 14, 2026.</h2></div>
+          <Link className="button button-accent" href="/#application">Complete your application</Link>
         </div>
       </section>
     </>

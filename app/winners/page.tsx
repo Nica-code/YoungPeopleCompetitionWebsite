@@ -4,16 +4,16 @@ import { recentWinners } from "@/content/site";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata(
-  "Recent winners",
-  "Recent winners of Huntington’s Young People’s Competition, 2023–2026.",
+  "Recent past winners",
+  "Recent past winners of Huntington’s Young People’s Competition, 2023–2026.",
   "/winners",
 );
 
 export default function WinnersPage() {
   return (
     <>
-      <PageIntro eyebrow="Recent winners" title="Young musicians, lasting impressions." intro="Meet the competition winners from 2023 through 2026." current="Winners" />
-      <section className="section section-paper section-first" aria-label="Recent winners">
+      <PageIntro eyebrow="2023–2026" title="Recent past winners" intro="Meet the competition winners from 2023 through 2026." current="Winners" />
+      <section className="section section-paper section-first" aria-label="Recent past winners">
         <div className="container winners-list-wrap">
           <div className="winners-list-heading"><span>Year</span><span>Musician</span><span>Instrument</span></div>
           <ol className="winners-simple-list">

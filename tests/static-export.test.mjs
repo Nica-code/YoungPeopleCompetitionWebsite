@@ -112,10 +112,10 @@ test("offers a local print option and a downloadable blank application", async (
     readFile(new URL("2027-young-peoples-competition-application.pdf", siteRoot)),
   ]);
 
-  assert.match(apply, /Fill out on this page, then print or save as PDF/i);
+  assert.match(apply, /Complete, print, and mail/i);
   assert.match(form, /Print or save as PDF/i);
   assert.match(form, /Download blank PDF/i);
-  assert.match(form, /href="\.\.\/2027-young-peoples-competition-application\.pdf"/i);
+  assert.match(form, /href="(?:\/YoungPeopleCompetitionWebsite)?\/2027-young-peoples-competition-application\.pdf"/i);
   assert.match(form, /Nothing entered here is sent to or stored/i);
   assert.ok(pdf.subarray(0, 5).equals(Buffer.from("%PDF-")));
   assert.match(pdf.toString("latin1"), /%%EOF\s*$/);
@@ -137,7 +137,7 @@ test("publishes four recent winners and applicant safeguards", async () => {
     assert.match(winners, new RegExp(`<li[^>]*>[^<]*<span[^>]*>${year}<\\/span>[^<]*<strong>${name}<\\/strong>[^<]*<span>${instrument}<\\/span>[^<]*<\\/li>`, "i"));
   }
 
-  assert.match(winners, /Recent winners/i);
+  assert.match(winners, /Recent past winners/i);
   for (const olderWinner of ["Armâan Karimpour", "Haleigh Frail", "Olivia Hay", "Erica Shen", "Sesil Dikener"]) {
     assert.doesNotMatch(winners, new RegExp(olderWinner));
   }
@@ -146,6 +146,22 @@ test("publishes four recent winners and applicant safeguards", async () => {
   assert.match(privacy, /minor/i);
   assert.match(privacy, /\$30 check/i);
   assert.match(accessibility, /WCAG 2\.2 AA/i);
+});
+
+test("Apply leads directly to the full local application without an instructions gateway", async () => {
+  for (const route of ["", "apply/", "application-form/"]) {
+    const html = await page(route);
+    assert.match(html, /id="application"/);
+    assert.match(html, /href="(?:(?:\/YoungPeopleCompetitionWebsite)?\/)?#application"/);
+    const application = html.match(/<section\b[^>]*id="application"[\s\S]*?<\/section>/i)?.[0];
+    assert.ok(application, `Missing application on ${route || "homepage"}`);
+    const fields = [...application.matchAll(/<input\b[^>]*name="([^"]+)"/g)].map((match) => match[1]);
+    assert.deepEqual(fields, ["applicant-name", "applicant-email", "applicant-phone", "grade", "applicant-address", "school", "teacher-name", "teacher-email", "teacher-phone", "teacher-address", "selection", "composer", "duration", "instrument", "accompanist"]);
+    assert.match(application, /role="form"/);
+    assert.doesNotMatch(application, /<form\b|action=|type="submit"/i);
+    assert.match(application, /121 Elwood Avenue/);
+    assert.doesNotMatch(html, /Open application form|Review mailing instructions/i);
+  }
 });
 
 test("shows the side-by-side partnership and organization identities", async () => {

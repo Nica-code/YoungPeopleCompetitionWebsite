@@ -15,7 +15,7 @@ pnpm dev
 
 The local Vinext preview is available at `http://localhost:3000`.
 
-The printable application at `/application-form/` mirrors the fields in the supplied 2027 notice. It is filled locally in the browser and printed; the site does not submit or store entries.
+The homepage includes the complete printable application at `/#application`. Apply links go directly to its fields. The older `/apply/` and `/application-form/` addresses also show the complete application so existing links keep working. It mirrors the fields in the supplied 2027 notice, is filled locally in the browser and printed, and does not submit or store entries.
 
 Useful checks:
 
@@ -60,7 +60,7 @@ The 2027 edition uses a mailed paper application and $30 check; there is no onli
 1. Confirm any changes to eligibility, repertoire, memorization, accompaniment, audition format, judging, prizes, dates, fee, and refund policy with the organizer.
 2. Confirm all named partner roles and contact details in writing.
 3. Approve a privacy notice, guardian consent, media release options, retention schedule, and deletion process before adding any online form for minors.
-4. The public winners page shows 2023–2026. Earlier known winners remain in `content/site.ts` for the future complete archive. Add new winners only with a public source or organizer-approved archival record.
+4. The “Recent past winners” list shows 2023–2026 on the homepage and winners page. Earlier known winners remain in `content/site.ts` for the future complete archive. Add new winners only with a public source or organizer-approved archival record.
 5. Run the checks above and proofread on desktop and mobile.
 
 See [docs/FOUNDATION.md](docs/FOUNDATION.md) for the research ledger, audience journeys, design system, architecture, data model, and launch risks.
