@@ -215,6 +215,16 @@ test("shows the side-by-side partnership and organization identities", async () 
   }
 });
 
+test("homepage partners appear presenter-first without dropping existing logos", async () => {
+  const home = await page("");
+  const group = home.slice(home.indexOf('class="partner-marks"'));
+  const marks = [...group.matchAll(/class="partner-mark partner-mark-([a-z]+)"/g)].map((match) => match[1]);
+  assert.deepEqual(marks, ["presenter", "marshall", "hso", "cabell"]);
+  for (const image of ["marshall-school-of-music.png", "huntington-symphony.png", "cabell-county-schools.png"]) {
+    assert.ok(group.includes(image));
+  }
+});
+
 test("omits internal-process language from public pages", async () => {
   const pages = await Promise.all(routes.map(page));
   for (const html of pages) {

@@ -91,9 +91,10 @@ address { font-style: normal; }
 .prize-runners-up { line-height: 1.8 !important; }
 .entry-partnership { border-top: 1px solid var(--line); padding-top: 1.2rem; }
 .entry-partnership > p { font-size: .77rem; line-height: 1.55; }
-.partner-marks { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem 1.4rem; align-items: center; margin-top: 1.5rem; }
+.partner-marks { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.2rem 1.4rem; align-items: center; margin-top: 1.5rem; }
 .partner-mark { min-width: 0; display: flex; align-items: center; text-decoration: none; }
-.partner-mark-marshall img { display: block; width: 100%; height: auto; }
+.partner-mark-marshall { justify-content: center; }
+.partner-mark-marshall img { display: block; width: 100%; min-width: 0; max-width: 100%; height: auto; }
 .partner-mark-hso { gap: .5rem; }
 .partner-mark-hso img { width: 2.35rem; height: 2.35rem; object-fit: contain; }
 .partner-mark-hso span { font-family: Georgia, serif; text-transform: uppercase; font-size: .58rem; line-height: 1.4; letter-spacing: .01em; }
@@ -212,7 +213,7 @@ address { font-style: normal; }
 .partnership-organization { min-width: 0; }
 .partnership-role { display: block; font-size: .6rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-bottom: .8rem; }
 .partnership-presenter > strong { font: 600 1.4rem/1.15 var(--display); }
-.partnership-marshall { max-width: 15rem; height: auto; }
+.partnership-marshall { display: block; width: 100%; max-width: 15rem; height: auto; }
 .partnership-hso { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
 .partnership-hso img { width: 2.75rem; height: 2.75rem; object-fit: contain; }
 .partnership-hso strong { font: 500 1rem/1.2 var(--display); }
@@ -318,7 +319,7 @@ address { font-style: normal; }
   .presentation-facts > div + div { padding-left: 1rem; }
   .presentation-details { gap: 2rem; }
   .presentation-details .entry-partnership { padding-left: 2rem; }
-  .presentation-details .partner-marks { grid-template-columns: 1fr 1fr; }
+  .presentation-details .partner-marks { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .presentation-details .partner-mark-marshall img { max-width: 12rem; }
   .container, .header-inner { width: calc(100% - 4rem); }
   .header-inner { gap: 1.4rem; }
@@ -350,7 +351,7 @@ address { font-style: normal; }
   .wordmark { gap: .7rem; }
   .wordmark-name { padding-left: .7rem; font-size: 1.05rem; }
   .header-inner { gap: 1rem; }
-  .partnership-organizations { grid-template-columns: 1fr 1fr; }
+  .partnership-organizations { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media (max-width: 740px) {
   .presentation-layout { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 1.75rem 2rem; }
@@ -369,7 +370,7 @@ address { font-style: normal; }
   .presentation-details .entry-partnership { border-left: 0; border-top: 1px solid var(--line); padding: 1.3rem 0 0; }
   .presentation-details .entry-partnership > p { font-size: .9rem; }
   .presentation-details .entry-prizes h2 { font-size: 2rem; }
-  .presentation-details .partner-marks { grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; }
+  .presentation-details .partner-marks { width: 100%; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem 2rem; }
   .application-page { padding-block: .75rem 2rem; }
   .application-page-nav { margin-bottom: .8rem; }
   .application-page-nav .text-link { font-size: .7rem; }
@@ -425,7 +426,7 @@ address { font-style: normal; }
   .entry-prizes h2 { font-size: 1.1rem; }
   .entry-prizes p { font-size: .84rem; }
   .entry-partnership > p { font-size: .82rem; }
-  .partner-marks { grid-template-columns: 1fr 1fr; max-width: 28rem; margin-inline: auto; gap: 1.4rem 2rem; }
+  .partner-marks { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 28rem; margin-inline: auto; gap: 1.4rem 2rem; }
   .partner-mark-cabell img { width: 5.5rem; height: 5.5rem; }
   .partner-mark-hso { justify-content: center; }
   .partner-mark-hso span { font-size: .64rem; }
